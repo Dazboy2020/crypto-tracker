@@ -30,7 +30,8 @@ async function fetch100Coins() {
 	);
 
 	const results = await response.json();
-	console.log(results);
+	console.log(results[0]);
+	const INFormat = new Intl.NumberFormat('en-US');
 
 	results.forEach((item) => {
 		const div = document.createElement('div');
@@ -38,22 +39,26 @@ async function fetch100Coins() {
 		div.innerHTML = `
         <div class="rank">${item.market_cap_rank}</div>
         <img class="logo" src="${item.image}" alt="" />
-        <div class="text">
-            ${item.name}
-        </div>
-        <div class="symbol">${item.symbol}</div>
+        <div class="coin__name">${item.name}</div>
+        <div class="symbol">${item.symbol.toUpperCase()}</div>
+        <div class="price">$${INFormat.format(item.current_price)}</div>
+        
 
+        <div class="${
+					+item.price_change_24h.toFixed(2) > 0
+						? (classList = 'positive')
+						: +item.price_change_24h < 0
+						? (classList = 'negative')
+						: +item.price_change_24h === 0.0
+						? (classList = 'price__24h')
+						: (classList = 'price__24h')
+				}">$${INFormat.format(+item.price_change_24h.toFixed(2))}</div>
+       
+
+               
         `;
 		document.querySelector('.coin__container').appendChild(div);
 	});
 }
 
 fetch100Coins();
-
-/* 
-coingecko_rank 
-description.en 
-image.large
-market_data
-symbol
-*/
