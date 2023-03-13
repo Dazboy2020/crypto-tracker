@@ -41,18 +41,20 @@ async function fetch100Coins() {
         <img class="logo" src="${item.image}" alt="" />
         <div class="coin__name">${item.name}</div>
         <div class="symbol">${item.symbol.toUpperCase()}</div>
-        <div class="price">$${INFormat.format(item.current_price)}</div>
+        <div class="price">$${INFormat.format(
+					item.current_price.toFixed(2)
+				)}</div>
         
 
         <div class="${
-					+item.price_change_24h.toFixed(2) > 0
+					+item.price_change_24h.toFixed(0) > 0
 						? (classList = 'positive')
 						: +item.price_change_24h < 0
 						? (classList = 'negative')
 						: +item.price_change_24h === 0.0
 						? (classList = 'price__24h_text')
 						: (classList = 'price__24h_text')
-				}">$${INFormat.format(+item.price_change_24h.toFixed(2))}</div>
+				}">$${INFormat.format(+item.price_change_24h.toFixed(0))}</div>
        
 
                
