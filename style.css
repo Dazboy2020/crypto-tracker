@@ -17,6 +17,9 @@ body {
 }
 
 .coin__container {
+	width: auto;
+	display: flex;
+	flex-direction: column;
 	border: 1px solid black;
 	font-size: 1.1rem;
 	font-weight: bold;
@@ -98,7 +101,7 @@ img {
 }
 
 .positive {
-	color: green;
+	color: greenyellow;
 	width: 5rem;
 	margin-left: 2rem;
 }
