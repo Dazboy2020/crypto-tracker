@@ -30,7 +30,7 @@ async function fetch100Coins() {
 	);
 
 	const results = await response.json();
-	console.log(results);
+	console.log(results[0]);
 	const INFormat = new Intl.NumberFormat('en-US');
 
 	results.forEach((item) => {
@@ -56,7 +56,7 @@ async function fetch100Coins() {
 						: (classList = 'price__24h_text')
 				}">$${INFormat.format(+item.price_change_24h.toFixed(0))}</div>
        
-
+        <div class="price__24h__perc">${item.price_change_percentage_24h}</div>
                
         `;
 		document.querySelector('.coin__container').appendChild(div);
