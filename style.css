@@ -83,7 +83,13 @@ img {
 .price__24h {
 	width: 5rem;
 	margin-left: 2rem;
+	color: rgb(141, 140, 140);
+}
+
+.price__24h_text {
 	color: whitesmoke;
+	width: 5rem;
+	margin-left: 2rem;
 }
 
 .positive {
