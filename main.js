@@ -62,3 +62,5 @@ async function fetch100Coins() {
 }
 
 fetch100Coins();
+
+// bug fixes
