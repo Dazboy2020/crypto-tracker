@@ -73,13 +73,18 @@ body {
 
 img {
 	display: flex;
-	/* align-items: center;
-	justify-content: center; */
 }
 
 .symbol {
+	color: rgb(78, 77, 77);
 	width: 4rem;
 	font-size: 1.1rem;
+	margin-left: 8rem;
+}
+
+.symbol__header {
+	color: var(--color-primary);
+	width: 4rem;
 	margin-left: 8rem;
 }
 
@@ -97,6 +102,10 @@ img {
 .price__24h_text {
 	color: var(--color-primary);
 	width: 5rem;
+	margin-left: 2rem;
+}
+
+.price__24h__perc {
 	margin-left: 2rem;
 }
 
