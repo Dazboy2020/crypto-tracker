@@ -1,0 +1,22 @@
+{
+  "name": "api_project",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dazboy2020/crypto-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dazboy2020/crypto-tracker/issues"
+  },
+  "homepage": "https://github.com/Dazboy2020/crypto-tracker#readme",
+  "dependencies": {
+    "@coingecko/cryptoformat": "^0.5.4"
+  },
+  "description": ""
+}

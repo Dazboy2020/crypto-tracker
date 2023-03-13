@@ -1,6 +1,4 @@
-const API_URL = 'https://api.coingecko.com/api/v3/';
-
-const params = {};
+import { formatCurrency } from '@coingecko/cryptoformat';
 
 async function fetchAPI(endpoint) {
 	const response = await fetch(`${API_URL}/coins/${endpoint}`);
