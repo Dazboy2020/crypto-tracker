@@ -30,7 +30,7 @@ async function fetch100Coins() {
 	);
 
 	const results = await response.json();
-	console.log(results[0]);
+	console.log(results);
 	const INFormat = new Intl.NumberFormat('en-US');
 
 	results.forEach((item) => {
