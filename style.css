@@ -25,7 +25,11 @@ body {
 }
 
 .coin__list {
-	background-color: black;
+	background: radial-gradient(
+		circle at 10% 20%,
+		rgb(23, 21, 21) 0%,
+		rgb(28, 27, 27) 90.2%
+	);
 	display: flex;
 	font-size: 1.2rem;
 	color: var(--color-primary);
