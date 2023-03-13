@@ -10,22 +10,22 @@
 }
 
 body {
+	min-height: 100vh;
 	font-size: 2rem;
-	background-color: black;
 	color: var(--color-primary);
 	font-family: 'Roboto', sans-serif;
 }
 
 .coin__container {
-	width: auto;
 	display: flex;
 	flex-direction: column;
 	border: 1px solid black;
-	font-size: 1.1rem;
+	font-size: 1.3rem;
 	font-weight: bold;
 }
 
 .coin__list {
+	background-color: black;
 	display: flex;
 	font-size: 1.2rem;
 	color: var(--color-primary);
@@ -35,7 +35,11 @@ body {
 }
 .card {
 	display: flex;
-	background: black;
+	background: radial-gradient(
+		circle at 10% 20%,
+		rgb(23, 21, 21) 0%,
+		rgb(28, 27, 27) 90.2%
+	);
 	padding: 5px;
 	align-items: center;
 	border-bottom: 1px solid rgb(43, 43, 43);
@@ -51,10 +55,13 @@ body {
 	padding-bottom: 0.5rem;
 }
 
+.coin__name {
+	color: azure;
+}
 .coin__name,
 .bar__symbol {
 	width: 10rem;
-	font-size: 1.1rem;
+	font-size: 1.3rem;
 	margin-left: 3rem;
 }
 
@@ -77,24 +84,24 @@ img {
 
 .symbol {
 	color: rgb(78, 77, 77);
-	width: 4rem;
+	width: 6rem;
 	font-size: 1.1rem;
 	margin-left: 8rem;
 }
 
 .symbol__header {
 	color: var(--color-primary);
-	width: 4rem;
+	width: 6rem;
 	margin-left: 8rem;
 }
 
 .price {
-	width: 5rem;
+	width: 10rem;
 	margin-left: 2rem;
 }
 
 .price__24h {
-	width: 5rem;
+	width: 10rem;
 	margin-left: 2rem;
 	color: var(--color-primary);
 }
@@ -103,20 +110,22 @@ img {
 	color: var(--color-primary);
 	width: 5rem;
 	margin-left: 2rem;
+	width: 10rem;
 }
 
 .price__24h__perc {
 	margin-left: 2rem;
+	width: 10rem;
 }
 
 .positive {
 	color: greenyellow;
-	width: 5rem;
+	width: 10rem;
 	margin-left: 2rem;
 }
 
 .negative {
 	color: red;
-	width: 5rem;
+	width: 10rem;
 	margin-left: 2rem;
 }
