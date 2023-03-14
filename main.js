@@ -1,6 +1,5 @@
 const API_URL = 'https://api.coingecko.com/api/v3/';
-
-const params = {};
+const coinTarget = document.querySelector('.coin__container');
 
 async function fetchAPI(endpoint) {
 	const response = await fetch(`${API_URL}/coins/${endpoint}`);
@@ -47,17 +46,7 @@ async function fetch100Coins() {
 
                
        
-        <div class="${
-					+item.price_change_percentage_24h.toFixed(6) > 0
-						? (classList = 'positive')
-						: +item.price_change_percentage_24h < 0
-						? (classList = 'negative')
-						: +item.price_change_percentage_24h.toFixed(4) == 0
-						? (classList = 'price__24h_text')
-						: (classList = 'price__24h_text')
-				}">${INFormat.format(
-			+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
-		)}%</div>
+        
                
         `;
 		document.querySelector('.coin__container').appendChild(div);
@@ -99,3 +88,23 @@ loadChart();
 // }">$${INFormat.format(
 // +item.price_change_24h.toFixed(8).slice(0, -4)
 // )}</div>
+
+// <div class="${
+// 					+item.price_change_percentage_24h.toFixed(6) > 0
+// 						? (classList = 'positive')
+// 						: +item.price_change_percentage_24h < 0
+// 						? (classList = 'negative')
+// 						: +item.price_change_percentage_24h.toFixed(4) == 0
+// 						? (classList = 'price__24h_text')
+// 						: (classList = 'price__24h_text')
+// 				}">${INFormat.format(
+// 			+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
+// 		)}%</div>
+
+coinTarget.addEventListener('click', FnClick);
+function FnClick(e) {
+	const click = e.target;
+	if (click.classList.contains('coin__name')) console.log('success');
+	if (click.classList !== 'coin__name') return;
+	console.log(click);
+}
