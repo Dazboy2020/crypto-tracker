@@ -64,8 +64,7 @@ body {
 	margin-left: 1rem;
 }
 
-.card img,
-.empty__logo {
+.card img {
 	display: flex;
 	width: 2.5rem;
 	align-items: center;
@@ -77,7 +76,7 @@ body {
 .card:hover {
 	color: white;
 	opacity: 1;
-	background-color: rgb(43, 43, 43);
+	background-color: rgb(28, 27, 27);
 }
 
 .coin__name,
@@ -123,37 +122,50 @@ body {
 	height: 100vh;
 }
 
-.left__Side {
-	height: 100%;
-	display: flex;
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: auto;
-	margin-right: 10rem;
-}
-
 .left__side {
 	height: 100%;
+	width: 75%;
 	position: fixed;
 }
 
 .tradingview-widget-container {
-	width: 80rem;
+	display: flex;
+	width: 89rem;
 	height: 50rem;
-	margin-right: 5rem;
-	padding: 5rem;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .right__side {
 	overflow: auto;
 	overflow-x: hidden;
-	width: 29rem;
+	/* width: 29rem; */
+	width: 25%;
 	margin-left: auto;
 	border-left: 1px solid rgb(84, 82, 82);
+	background-color: rgb(10, 10, 10);
 }
 
 .coin__header {
 	margin-left: 1rem;
 	margin-top: 1rem;
+	padding: 0.5rem;
+}
+
+.navbar {
+	font-size: 1.4rem;
+	font-weight: 700;
+	display: flex;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.market__cap,
+.volume24h,
+.max__supply,
+.circulating__supply {
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
 }
