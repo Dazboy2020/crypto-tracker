@@ -37,26 +37,14 @@ async function fetch100Coins() {
 		const div = document.createElement('div');
 		div.classList.add('card');
 		div.innerHTML = `
-        <div class="rank">${item.market_cap_rank}</div>
         <img class="logo" src="${item.image}" alt="" />
         <div class="coin__name">${item.name}</div>
-        <div class="symbol">${item.symbol.toUpperCase()}</div>
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
 				)}</div>
         
 
-                <div class="${
-									+item.price_change_24h.toFixed(6) > 0
-										? (classList = 'positive')
-										: +item.price_change_24h.toFixed(6) < 0
-										? (classList = 'negative')
-										: +item.price_change_24h.toFixed(4) == 0
-										? (classList = 'price__24h_text')
-										: (classList = 'price__24h_text')
-								}">$${INFormat.format(
-			+item.price_change_24h.toFixed(8).slice(0, -4)
-		)}</div>
+               
        
         <div class="${
 					+item.price_change_percentage_24h.toFixed(6) > 0
@@ -95,3 +83,18 @@ function loadChart() {
 }
 
 loadChart();
+
+//! Notes!
+// <div class="rank">${item.market_cap_rank}</div>
+
+// <div class="${
+//     +item.price_change_24h.toFixed(6) > 0
+//         ? (classList = 'positive')
+//         : +item.price_change_24h.toFixed(6) < 0
+//         ? (classList = 'negative')
+//         : +item.price_change_24h.toFixed(4) == 0
+//         ? (classList = 'price__24h_text')
+//         : (classList = 'price__24h_text')
+// }">$${INFormat.format(
+// +item.price_change_24h.toFixed(8).slice(0, -4)
+// )}</div>
