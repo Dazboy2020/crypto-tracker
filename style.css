@@ -130,7 +130,8 @@ body {
 
 .tradingview-widget-container {
 	display: flex;
-	width: 89rem;
+	/* width: 89rem; */
+	width: 70vw;
 	height: 50rem;
 	margin-right: auto;
 	margin-left: auto;
@@ -150,6 +151,7 @@ body {
 	margin-left: 1rem;
 	margin-top: 1rem;
 	padding: 0.5rem;
+	animation: move-to-right 2s;
 }
 
 .navbar {
