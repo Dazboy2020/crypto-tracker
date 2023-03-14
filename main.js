@@ -104,7 +104,7 @@ loadChart();
 coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
 	const click = e.target;
-	if (click.classList.contains('coin__name')) console.log('success');
+	if (click.classList.contains('coin__name')) console.log(click.textContent);
 	if (click.classList !== 'coin__name') return;
 	console.log(click);
 }
