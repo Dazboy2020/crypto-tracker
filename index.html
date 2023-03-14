@@ -12,11 +12,15 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
 			rel="stylesheet"
 		/>
+		<script
+			type="text/javascript"
+			src="https://s3.tradingview.com/tv.js"
+		></script>
 
 		<title>API</title>
 	</head>
 	<body>
-		<div class="coin__list">
+		<!-- <div class="coin__list">
 			<div class="rank">#</div>
 			<div class="empty__logo">Coin</div>
 			<div class="coin__name"></div>
@@ -24,7 +28,15 @@
 			<div class="price">Price</div>
 			<div class="price__24h">24h</div>
 			<div class="price__24h__perc">24h %</div>
+		</div> -->
+		<div class="main">
+			<div class="left__Side">
+				<div class="tradingview-widget-container" id="tv__chart"></div>
+			</div>
+
+			<div class="right__side">
+				<div class="coin__container"></div>
+			</div>
 		</div>
-		<div class="coin__container"></div>
 	</body>
 </html>

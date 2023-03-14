@@ -46,15 +46,15 @@ async function fetch100Coins() {
 				)}</div>
         
 
-        <div class="${
-					+item.price_change_24h.toFixed(6) > 0
-						? (classList = 'positive')
-						: +item.price_change_24h.toFixed(6) < 0
-						? (classList = 'negative')
-						: +item.price_change_24h.toFixed(4) == 0
-						? (classList = 'price__24h_text')
-						: (classList = 'price__24h_text')
-				}">$${INFormat.format(
+                <div class="${
+									+item.price_change_24h.toFixed(6) > 0
+										? (classList = 'positive')
+										: +item.price_change_24h.toFixed(6) < 0
+										? (classList = 'negative')
+										: +item.price_change_24h.toFixed(4) == 0
+										? (classList = 'price__24h_text')
+										: (classList = 'price__24h_text')
+								}">$${INFormat.format(
 			+item.price_change_24h.toFixed(8).slice(0, -4)
 		)}</div>
        
@@ -77,4 +77,21 @@ async function fetch100Coins() {
 
 fetch100Coins();
 
-// bug fixes
+function loadChart() {
+	new TradingView.widget({
+		autosize: true,
+		symbol: 'BITFINEX:BTCUSD',
+		interval: 'D',
+		timezone: 'Europe/London',
+		theme: 'dark',
+		style: '1',
+		locale: 'en',
+		toolbar_bg: '#f1f3f6',
+		enable_publishing: false,
+		allow_symbol_change: true,
+		save_image: false,
+		container_id: 'tv__chart',
+	});
+}
+
+loadChart();

@@ -7,24 +7,24 @@
 :root {
 	--color-primary: rgb(213, 211, 211);
 	--color-secondary: #f1c40f;
-
-	width: 100%;
 }
 
 body {
-	min-height: 100vh;
-	font-size: 2rem;
+	font-size: 1rem;
 	color: var(--color-primary);
 	font-family: 'Roboto', sans-serif;
 	background-color: black;
+	height: 100%;
 }
 
+/*! COIN CONTAINER */
 .coin__container {
 	display: flex;
 	flex-direction: column;
 	border: 1px solid black;
-	font-size: 1.3rem;
+	font-size: 1rem;
 	animation: move-to-right 2s;
+	height: 100%;
 }
 
 @keyframes move-to-right {
@@ -43,7 +43,7 @@ body {
 .coin__list {
 	background-color: black;
 	display: flex;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	color: var(--color-primary);
 	align-items: center;
 	padding-top: 0.5rem;
@@ -56,6 +56,7 @@ body {
 	padding: 5px;
 	align-items: center;
 	border-bottom: 1px solid rgb(43, 43, 43);
+	font-size: 1rem;
 }
 
 .card img,
@@ -75,7 +76,7 @@ body {
 .coin__name,
 .bar__symbol {
 	width: 10rem;
-	font-size: 1.3rem;
+	font-size: 1rem;
 	margin-left: 3rem;
 }
 
@@ -91,10 +92,6 @@ body {
 	display: flex;
 	width: 4rem;
 }
-/* 
-img {
-	display: flex;
-} */
 
 .symbol {
 	color: rgb(78, 77, 77);
@@ -142,4 +139,31 @@ img {
 	color: red;
 	width: 10rem;
 	margin-left: 2rem;
+}
+
+/*! CHART */
+.main {
+	display: flex;
+	height: 100vh;
+}
+
+.left__side {
+	height: 50vh;
+	display: flex;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+.tradingview-widget-container {
+	width: 80rem;
+	height: 50rem;
+	margin-right: 5rem;
+	padding: 5rem;
+}
+
+.right__side {
+	flex-basis: 40%;
+	overflow: auto;
+	overflow-x: hidden;
 }
