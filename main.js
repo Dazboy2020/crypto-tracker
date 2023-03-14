@@ -22,7 +22,7 @@ async function fetchAPI(endpoint) {
 	document.querySelector('.coin__container').appendChild(div);
 }
 
-// fetchAPI('litecoin');
+// fetchAPI('ethereum');
 
 async function fetch100Coins() {
 	const response = await fetch(
@@ -39,6 +39,7 @@ async function fetch100Coins() {
 		div.innerHTML = `
         <img class="logo" src="${item.image}" alt="" />
         <div class="coin__name">${item.name}</div>
+        <div class="symbol">${item.symbol.toUpperCase()}</div>
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
 				)}</div>
