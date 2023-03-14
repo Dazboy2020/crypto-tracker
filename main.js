@@ -42,20 +42,20 @@ async function fetch100Coins() {
         <div class="coin__name">${item.name}</div>
         <div class="symbol">${item.symbol.toUpperCase()}</div>
         <div class="price">$${INFormat.format(
-					item.current_price.toFixed(8).slice(0, -6)
+					item.current_price.toFixed(8).slice(0, -4)
 				)}</div>
         
 
         <div class="${
-					+item.price_change_24h.toFixed(2) > 0
+					+item.price_change_24h.toFixed(6) > 0
 						? (classList = 'positive')
 						: +item.price_change_24h.toFixed(6) < 0
 						? (classList = 'negative')
-						: +item.price_change_24h.toFixed(0) == 0
+						: +item.price_change_24h.toFixed(4) == 0
 						? (classList = 'price__24h_text')
 						: (classList = 'price__24h_text')
 				}">$${INFormat.format(
-			+item.price_change_24h.toFixed(8).slice(0, -6)
+			+item.price_change_24h.toFixed(8).slice(0, -4)
 		)}</div>
        
         <div class="${
@@ -63,12 +63,12 @@ async function fetch100Coins() {
 						? (classList = 'positive')
 						: +item.price_change_percentage_24h < 0
 						? (classList = 'negative')
-						: Math.round(+item.price_change_percentage_24h).toFixed(0) == 0
+						: +item.price_change_percentage_24h.toFixed(4) == 0
 						? (classList = 'price__24h_text')
 						: (classList = 'price__24h_text')
-				}">$${INFormat.format(
-			+item.price_change_percentage_24h.toFixed(8).slice(0, -6)
-		)}</div>
+				}">${INFormat.format(
+			+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
+		)}%</div>
                
         `;
 		document.querySelector('.coin__container').appendChild(div);

@@ -7,6 +7,8 @@
 :root {
 	--color-primary: rgb(213, 211, 211);
 	--color-secondary: #f1c40f;
+
+	width: 100%;
 }
 
 body {
@@ -14,6 +16,7 @@ body {
 	font-size: 2rem;
 	color: var(--color-primary);
 	font-family: 'Roboto', sans-serif;
+	background-color: black;
 }
 
 .coin__container {
@@ -21,29 +24,35 @@ body {
 	flex-direction: column;
 	border: 1px solid black;
 	font-size: 1.3rem;
-	font-weight: bold;
+	animation: move-to-right 2s;
+}
+
+@keyframes move-to-right {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		transform: translateX(0px);
+
+		opacity: 1;
+	}
 }
 
 .coin__list {
-	background: radial-gradient(
-		circle at 10% 20%,
-		rgb(23, 21, 21) 0%,
-		rgb(28, 27, 27) 90.2%
-	);
+	background-color: black;
 	display: flex;
 	font-size: 1.2rem;
 	color: var(--color-primary);
 	align-items: center;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
+	animation: move-to-right 2s;
 }
+
 .card {
 	display: flex;
-	background: radial-gradient(
-		circle at 10% 20%,
-		rgb(23, 21, 21) 0%,
-		rgb(28, 27, 27) 90.2%
-	);
 	padding: 5px;
 	align-items: center;
 	border-bottom: 1px solid rgb(43, 43, 43);
@@ -62,6 +71,7 @@ body {
 .coin__name {
 	color: azure;
 }
+
 .coin__name,
 .bar__symbol {
 	width: 10rem;
@@ -81,10 +91,10 @@ body {
 	display: flex;
 	width: 4rem;
 }
-
+/* 
 img {
 	display: flex;
-}
+} */
 
 .symbol {
 	color: rgb(78, 77, 77);
