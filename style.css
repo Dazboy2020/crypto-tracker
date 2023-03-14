@@ -61,6 +61,7 @@ body {
 	border-bottom: 1px solid rgb(43, 43, 43);
 	font-size: 1rem;
 	opacity: 0.9;
+	margin-left: 1rem;
 }
 
 .card img,
@@ -93,53 +94,15 @@ body {
 	cursor: pointer;
 }
 
-.rank,
-.bar__rank {
-	width: 3rem;
-	font-size: 1.1rem;
-	margin-left: 2.5rem;
-	margin-right: 1.75rem;
-}
-
-.bar__coin {
-	display: flex;
-	width: 4rem;
-}
-
 .symbol {
 	color: rgb(128, 124, 124);
 	width: 5rem;
 	font-size: 1rem;
 	margin-left: 0.5rem;
 }
-
-.symbol__header {
-	color: var(--color-primary);
-	width: 6rem;
-	margin-left: 8rem;
-}
-
 .price {
 	width: 6rem;
 	margin-left: 2rem;
-}
-
-.price__24h {
-	width: 8rem;
-	margin-left: 2rem;
-	color: var(--color-primary);
-}
-
-.price__24h_text {
-	color: var(--color-primary);
-	width: 5rem;
-	margin-left: 2rem;
-	width: 10rem;
-}
-
-.price__24h__perc {
-	margin-left: 2rem;
-	width: 10rem;
 }
 
 .positive {
@@ -187,4 +150,10 @@ body {
 	overflow-x: hidden;
 	width: 29rem;
 	margin-left: auto;
+	border-left: 1px solid rgb(84, 82, 82);
+}
+
+.coin__header {
+	margin-left: 1rem;
+	margin-top: 1rem;
 }
