@@ -41,13 +41,7 @@ async function fetch100Coins() {
         <div class="symbol">${item.symbol.toUpperCase()}</div>
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
-				)}</div>
-        
-
-               
-       
-        
-               
+				)}</div>       
         `;
 		document.querySelector('.coin__container').appendChild(div);
 	});
