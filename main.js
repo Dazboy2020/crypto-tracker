@@ -1,7 +1,7 @@
 const API_URL = 'https://api.coingecko.com/api/v3/';
 const coinTarget = document.querySelector('.coin__container');
 
-async function fetchAPI(endpoint) {
+async function fetchCoinInfo(endpoint) {
 	const response = await fetch(`${API_URL}/coins/${endpoint}`);
 
 	const data = await response.json();
@@ -21,7 +21,7 @@ async function fetchAPI(endpoint) {
 	document.querySelector('.coin__container').appendChild(div);
 }
 
-// fetchAPI('ethereum');
+// fetchCoinInfo('ethereum');
 
 async function fetch100Coins() {
 	const response = await fetch(
@@ -36,9 +36,8 @@ async function fetch100Coins() {
 		const div = document.createElement('div');
 		div.classList.add('card');
 		div.innerHTML = `
-        <img class="logo" src="${item.image}" alt="" />
+        <img class="logo" src="${item.image}" alt="${item.name}" />
         <div class="coin__name">${item.name}</div>
-        <div class="symbol">${item.symbol.toUpperCase()}</div>
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
 				)}</div>       
@@ -94,6 +93,8 @@ loadChart();
 // 				}">${INFormat.format(
 // 			+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
 // 		)}%</div>
+
+/* <div class="symbol">${item.symbol.toUpperCase()}</div> */
 
 coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {

@@ -87,8 +87,8 @@ body {
 }
 
 .price {
-	width: 6rem;
-	margin-left: 2rem;
+	width: 5rem;
+	margin-left: 2.5rem;
 	color: azure;
 }
 
@@ -104,7 +104,7 @@ body {
 	margin-left: 1rem;
 }
 
-/*! CHART */
+/*! LEFT SIDE MAIN WINDOW */
 .main {
 	display: flex;
 	height: 100vh;
@@ -112,7 +112,7 @@ body {
 
 .left__side {
 	height: 100%;
-	width: 75%;
+	width: 80%;
 	position: fixed;
 }
 
@@ -129,7 +129,7 @@ body {
 .right__side {
 	overflow: auto;
 	overflow-x: hidden;
-	width: 25%;
+	width: 20%;
 	margin-left: auto;
 	border-left: 1px solid rgb(84, 82, 82);
 	background-color: rgb(10, 10, 10);
@@ -176,7 +176,7 @@ body {
 }
 
 .main__coin__logo img {
-	margin-right: 3rem;
+	margin-right: 1rem;
 	height: 3rem;
 	width: 3rem;
 }
