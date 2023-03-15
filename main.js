@@ -11,17 +11,23 @@ async function fetchCoinInfo(endpoint) {
 	console.log(data);
 
 	const div = document.createElement('div');
-	div.classList.add('chart');
 	div.innerHTML = `
-    <img src="${data.image.large}" alt="${endpoint}" />
-    Rank: ${data.coingecko_rank}
-    $${INFormat.format(data.market_data.ath.usd)}
-
+	<div class="main__coin__info">
+						<div class="main__coin__logo">
+							<img src="${data.image.small}" alt="${data.name}">
+						</div>
+						<div class="main__coin__name">${data.name}</div>
+						<div class="main__coin__ticker">(${data.symbol.toUpperCase()})</div>
+						<div class="main__price">$${INFormat.format(
+							data.market_data.current_price.usd
+						)}</div>
+					</div>
+	
 `;
-	document.querySelector('.coin__container').appendChild(div);
+	document.querySelector('.main__heading').appendChild(div);
 }
 
-// fetchCoinInfo('ethereum');
+fetchCoinInfo('bitcoin');
 
 async function fetch100Coins() {
 	const response = await fetch(
