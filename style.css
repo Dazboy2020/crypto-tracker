@@ -119,7 +119,7 @@ body {
 .tradingview-widget-container {
 	display: flex;
 	/* width: 89rem; */
-	width: 70vw;
+	width: 74vw;
 	height: 50rem;
 	margin-right: auto;
 	margin-left: auto;
@@ -150,6 +150,8 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: space-evenly;
+	background-color: rgb(25, 23, 23);
+	margin: 2rem, 3rem;
 }
 
 .market__cap,
@@ -173,15 +175,15 @@ body {
 
 .main__coin__info {
 	display: flex;
-	justify-content: space-around;
 	align-items: center;
 }
 
 .main__coin__logo img {
 	display: flex;
-	margin-right: 1rem;
+	margin-right: 0.5rem;
 	height: 3rem;
 	width: 3rem;
+	margin-left: 3rem;
 }
 
 .main__coin__ticker {
@@ -189,6 +191,7 @@ body {
 	font-size: 1.2rem;
 	color: rgb(157, 160, 160);
 	margin-left: 0.5rem;
+	margin-right: 2rem;
 }
 
 .main__price {

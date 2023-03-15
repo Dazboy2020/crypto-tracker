@@ -19,7 +19,7 @@ async function fetchCoinInfo(endpoint) {
 						<div class="main__coin__name">${data.name}</div>
 						<div class="main__coin__ticker">(${data.symbol.toUpperCase()})</div>
 						<div class="main__price">$${INFormat.format(
-							data.market_data.current_price.usd
+							data.market_data.current_price.usd.toFixed(2)
 						)}</div>
 					</div>
 	
