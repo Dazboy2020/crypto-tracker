@@ -1,25 +1,37 @@
 const API_URL = 'https://api.coingecko.com/api/v3/';
 const coinTarget = document.querySelector('.coin__container');
 
+//! FETCH COIN INFO
 async function fetchCoinInfo(endpoint) {
 	const response = await fetch(`${API_URL}/coins/${endpoint}`);
 
 	const data = await response.json();
 
 	const INFormat = new Intl.NumberFormat('en-US');
-
 	console.log(data);
 }
 
-fetchCoinInfo('bitcoin');
+//! FETCH HEADER INFO
+async function fetchHeaderInfo(coin) {
+	const response = await fetch(
+		`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coin}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
+	);
 
-async function fetch100Coins() {
+	const data = await response.json();
+	updateHeaderInfo(data);
+}
+
+//! FETCH OPENING COINS
+
+async function fetch100Coins(endpoint) {
 	const response = await fetch(
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 	);
 
 	const results = await response.json();
 	console.log(results);
+	fetchHeaderInfo(results[0].id);
+
 	const INFormat = new Intl.NumberFormat('en-US');
 
 	results.forEach((item) => {
@@ -27,14 +39,24 @@ async function fetch100Coins() {
 		div.classList.add('card');
 		div.innerHTML = `
         <img class="logo" src="${item.image}" alt="${item.name}" />
-        <div class="coin__name">${item.name}</div>
+        <div class="coin__name">${item.id}</div>
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
 				)}</div>       
         `;
 		document.querySelector('.coin__container').appendChild(div);
 	});
+}
+
+fetch100Coins('bitcoin');
+
+//! HEADER
+function updateHeaderInfo(results) {
+	console.log(results);
+	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
+	const INFormat = new Intl.NumberFormat('en-US');
+
 	div.innerHTML = `
 	<div class="main__coin__info">
 						<div class="main__coin__logo">
@@ -50,8 +72,7 @@ async function fetch100Coins() {
 	document.querySelector('.main__heading').appendChild(div);
 }
 
-fetch100Coins();
-
+//! LOAD TRADING VIEW
 function loadChart() {
 	new TradingView.widget({
 		autosize: true,
@@ -70,6 +91,18 @@ function loadChart() {
 }
 
 loadChart();
+
+//! EVENT LISTENER
+coinTarget.addEventListener('click', FnClick);
+function FnClick(e) {
+	const click = e.target;
+	if (click.classList.contains('coin__name')) {
+		const coin = click.textContent;
+		console.log(coin);
+		fetchHeaderInfo(coin);
+	}
+	if (click.classList !== 'coin__name') return;
+}
 
 //! Notes!
 // <div class="rank">${item.market_cap_rank}</div>
@@ -99,11 +132,3 @@ loadChart();
 // 		)}%</div>
 
 /* <div class="symbol">${item.symbol.toUpperCase()}</div> */
-
-coinTarget.addEventListener('click', FnClick);
-function FnClick(e) {
-	const click = e.target;
-	if (click.classList.contains('coin__name')) console.log(click.textContent);
-	if (click.classList !== 'coin__name') return;
-	console.log(click);
-}

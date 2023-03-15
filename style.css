@@ -150,15 +150,14 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: space-evenly;
-	background-color: rgb(25, 23, 23);
-	margin: 2rem, 3rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 
 .market__cap,
 .volume24h,
 .max__supply,
 .circulating__supply {
-	padding: 0.5rem;
 	display: flex;
 	flex-direction: column;
 }
