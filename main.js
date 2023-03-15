@@ -9,22 +9,6 @@ async function fetchCoinInfo(endpoint) {
 	const INFormat = new Intl.NumberFormat('en-US');
 
 	console.log(data);
-
-	const div = document.createElement('div');
-	div.innerHTML = `
-	<div class="main__coin__info">
-						<div class="main__coin__logo">
-							<img src="${data.image.small}" alt="${data.name}">
-						</div>
-						<div class="main__coin__name">${data.name}</div>
-						<div class="main__coin__ticker">(${data.symbol.toUpperCase()})</div>
-						<div class="main__price">$${INFormat.format(
-							data.market_data.current_price.usd.toFixed(2)
-						)}</div>
-					</div>
-	
-`;
-	document.querySelector('.main__heading').appendChild(div);
 }
 
 fetchCoinInfo('bitcoin');
@@ -50,6 +34,20 @@ async function fetch100Coins() {
         `;
 		document.querySelector('.coin__container').appendChild(div);
 	});
+	const div = document.createElement('div');
+	div.innerHTML = `
+	<div class="main__coin__info">
+						<div class="main__coin__logo">
+							<img src="${results[0].image}" alt="${results.name}">
+						</div>
+						<div class="main__coin__name">${results[0].name}</div>
+						<div class="main__coin__ticker">(${results[0].symbol.toUpperCase()})</div>
+						<div class="main__price">$${INFormat.format(
+							results[0].current_price.toFixed(2)
+						)}</div>
+					</div>
+	`;
+	document.querySelector('.main__heading').appendChild(div);
 }
 
 fetch100Coins();
