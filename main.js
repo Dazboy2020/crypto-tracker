@@ -22,7 +22,6 @@ async function fetchHeaderInfo(coin) {
 }
 
 //! FETCH OPENING COINS
-
 async function fetch100Coins(endpoint) {
 	const response = await fetch(
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
@@ -48,7 +47,7 @@ async function fetch100Coins(endpoint) {
 	});
 }
 
-fetch100Coins('bitcoin');
+fetch100Coins();
 
 //! HEADER
 function updateHeaderInfo(results) {
@@ -70,13 +69,16 @@ function updateHeaderInfo(results) {
 					</div>
 	`;
 	document.querySelector('.main__heading').appendChild(div);
+	const symbol = results[0].symbol;
+	loadChart(symbol);
 }
 
 //! LOAD TRADING VIEW
-function loadChart() {
+function loadChart(symbol) {
+	document.querySelector('.tradingview-widget-container').innerHTML = ``;
 	new TradingView.widget({
 		autosize: true,
-		symbol: 'BITFINEX:BTCUSD',
+		symbol: `BITFINEX:${symbol}USD`,
 		interval: 'D',
 		timezone: 'Europe/London',
 		theme: 'dark',
@@ -89,8 +91,6 @@ function loadChart() {
 		container_id: 'tv__chart',
 	});
 }
-
-loadChart();
 
 //! EVENT LISTENER
 coinTarget.addEventListener('click', FnClick);
