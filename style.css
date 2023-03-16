@@ -46,7 +46,7 @@ body {
 	align-items: center;
 	border-bottom: 1px solid rgb(43, 43, 43);
 	font-size: 1rem;
-	opacity: 0.9;
+	opacity: 0.8;
 	margin-left: 1rem;
 }
 
@@ -62,7 +62,7 @@ body {
 .card:hover {
 	color: white;
 	opacity: 1;
-	background-color: rgb(28, 27, 27);
+	/* background-color: rgb(28, 27, 27); */
 }
 
 /*! COIN NAME IN LIST */
@@ -209,4 +209,10 @@ body {
 
 		opacity: 1;
 	}
+}
+
+.active {
+	background-color: rgb(51, 48, 48);
+	color: white;
+	opacity: 1;
 }

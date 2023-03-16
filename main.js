@@ -1,5 +1,6 @@
 const API_URL = 'https://api.coingecko.com/api/v3/';
 const coinTarget = document.querySelector('.coin__container');
+const coinListEL = document.querySelector('.coin__container');
 
 //! FETCH COIN INFO
 async function fetchCoinInfo(endpoint) {
@@ -28,7 +29,6 @@ async function fetch100Coins(endpoint) {
 	);
 
 	const results = await response.json();
-	console.log(results);
 	fetchHeaderInfo(results[0].id);
 
 	const INFormat = new Intl.NumberFormat('en-US');
@@ -41,7 +41,7 @@ async function fetch100Coins(endpoint) {
         <div class="coin__name">${item.id}</div>
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
-				)}</div>       
+				)}</div>    
         `;
 		document.querySelector('.coin__container').appendChild(div);
 	});
@@ -49,7 +49,7 @@ async function fetch100Coins(endpoint) {
 
 fetch100Coins();
 
-//! HEADER
+//! UPDATE HEADER
 function updateHeaderInfo(results) {
 	console.log(results);
 	document.querySelector('.main__heading').innerHTML = ``;
@@ -70,8 +70,21 @@ function updateHeaderInfo(results) {
 	`;
 	document.querySelector('.main__heading').appendChild(div);
 	const symbol = results[0].symbol;
+
 	loadChart(symbol);
+	// const name = results[0].name.toLowerCase();
 }
+
+//! GET EXCHANGE DETAILS
+async function getExchangeInfo(id) {
+	const response = await fetch(`https://api.coingecko.com/api/v3/coins/${id}`);
+	const data = await response.json();
+	const exchange = data.tickers[1].market.identifier;
+	console.log(data);
+	console.log(exchange);
+}
+
+// getExchangeInfo('monero');
 
 //! LOAD TRADING VIEW
 function loadChart(symbol) {
@@ -97,11 +110,16 @@ coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
 	const click = e.target;
 	if (click.classList.contains('coin__name')) {
+		Array.from(document.querySelectorAll('.card')).forEach((el) => {
+			el.classList.remove('active');
+		});
+
+		const cardEL = e.target.closest('.card');
+		cardEL.classList.add('active');
 		const coin = click.textContent;
 		console.log(coin);
 		fetchHeaderInfo(coin);
 	}
-	if (click.classList !== 'coin__name') return;
 }
 
 //! Notes!
