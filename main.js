@@ -72,7 +72,6 @@ function updateHeaderInfo(results) {
 	console.log(results);
 	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
-
 	const INFormat = new Intl.NumberFormat('en-US');
 
 	div.innerHTML = `
@@ -82,6 +81,9 @@ function updateHeaderInfo(results) {
 			</div>
 				<div class="main__coin__name">${results[0].name}</div>
 					<div class="main__coin__ticker">(${results[0].symbol.toUpperCase()})</div>
+
+
+					<div class="price__block">
 					<div class="main__price">$${INFormat.format(
 						results[0].current_price.toFixed(2)
 					)}</div>
@@ -95,9 +97,12 @@ function updateHeaderInfo(results) {
 							: +results[0].price_change_percentage_24h.toFixed(4) == 0
 							? (classList = 'price__24h_text')
 							: (classList = 'price__24h_text')
-					}">${INFormat.format(
-		+results[0].price_change_percentage_24h.toFixed(8).slice(0, -7)
-	)}%</div>
+					}">  <i class="fa-solid fa-arrow-up"></i>
+					${INFormat.format(
+						+results[0].price_change_percentage_24h.toFixed(8).slice(0, -7)
+					)}%</div>
+					
+					</div
 					
 		</div>
 	`;

@@ -100,10 +100,10 @@ body {
 .positive {
 	display: flex;
 	color: rgb(10, 80, 2);
-	background-color: rgb(219, 218, 213);
-	width: 4rem;
+	background-color: whitesmoke;
+	width: 5rem;
 	margin-left: 1rem;
-	padding: 0.1rem o.3rem;
+	padding: 0.1rem 0.3rem;
 	font-size: 1.4rem;
 	justify-content: center;
 	align-self: center;
@@ -112,8 +112,11 @@ body {
 
 .negative {
 	color: red;
-	width: 10rem;
+	width: 5rem;
 	margin-left: 1rem;
+	background-color: rgb(236, 233, 220);
+	padding: 0.1rem o.3rem;
+	color: crimson;
 }
 
 /*! LEFT SIDE MAIN WINDOW */
@@ -197,6 +200,8 @@ body {
 .main__coin__info {
 	display: flex;
 	align-items: center;
+	justify-content: flex-start;
+	width: 50rem;
 }
 
 .main__coin__logo img {
@@ -204,7 +209,7 @@ body {
 	margin-right: 0.5rem;
 	height: 3rem;
 	width: 3rem;
-	margin-left: 3rem;
+	margin-left: 2rem;
 }
 
 .main__coin__ticker {
@@ -215,9 +220,22 @@ body {
 	margin-right: 2rem;
 }
 
-.main__price {
+.price__block {
 	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-left: 10rem;
+}
+
+.main__price {
 	font-size: 2.3rem;
+}
+
+.fa-arrow-up {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-right: 3px;
 }
 
 /*! KEY FRAMES */
