@@ -1,6 +1,7 @@
 const API_URL = 'https://api.coingecko.com/api/v3/';
 const coinTarget = document.querySelector('.coin__container');
 const coinListEL = document.querySelector('.coin__container');
+let x = 0;
 
 //! FETCH COIN INFO
 async function fetchCoinInfo(endpoint) {
@@ -25,7 +26,8 @@ async function fetchHeaderInfo(coin) {
 //! FETCH OPENING COINS
 async function fetch100Coins(endpoint) {
 	const response = await fetch(
-		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
+		//! ADDED CrossDomain: TRUE
+		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false, { crossDomain: true }'
 	);
 
 	const results = await response.json();
@@ -47,17 +49,23 @@ async function fetch100Coins(endpoint) {
 				)}</div>    
         `;
 		document.querySelector('.coin__container').appendChild(div);
-	});
 
-	let x = 0;
+		if (div.classList.contains(`${endpoint}`)) div.classList.add('active');
+	});
+	openingActiveCoin();
+}
+
+//! OPENING ACTIVE COIN
+function openingActiveCoin() {
+	const findActiveCoin = Array.from(document.querySelectorAll('.card'));
+
 	if (x > 0) return;
-	const openingCoinStyle = Array.from(document.querySelectorAll('.card'));
-	openingCoinStyle.forEach((el) => {
+	findActiveCoin.forEach((el) => {
 		if (el.classList.contains('bitcoin')) {
 			if (x === 0) el.classList.add('active');
 		}
-		x++;
 	});
+	x++;
 }
 
 fetch100Coins();
@@ -116,8 +124,8 @@ function FnClick(e) {
 		const cardEL = e.target.closest('.card');
 		cardEL.classList.add('active');
 		const coin = click.textContent;
-		console.log(coin);
 		fetchHeaderInfo(coin);
+		fetch100Coins(coin);
 	}
 }
 
