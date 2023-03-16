@@ -25,8 +25,7 @@ async function fetchHeaderInfo(coin) {
 //! FETCH OPENING COINS
 async function fetch100Coins(endpoint) {
 	const response = await fetch(
-		//! ADDED CrossDomain: TRUE
-		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false, { crossDomain: true }'
+		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false,'
 	);
 
 	const results = await response.json();
@@ -70,21 +69,37 @@ fetch100Coins();
 
 //! UPDATE HEADER
 function updateHeaderInfo(results) {
+	console.log(results);
 	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
+
 	const INFormat = new Intl.NumberFormat('en-US');
 
 	div.innerHTML = `
-	<div class="main__coin__info">
-						<div class="main__coin__logo">
-							<img src="${results[0].image}" alt="${results.name}">
-						</div>
-						<div class="main__coin__name">${results[0].name}</div>
-						<div class="main__coin__ticker">(${results[0].symbol.toUpperCase()})</div>
-						<div class="main__price">$${INFormat.format(
-							results[0].current_price.toFixed(2)
-						)}</div>
-					</div>
+		<div class="main__coin__info">
+			<div class="main__coin__logo">
+				<img src="${results[0].image}" alt="${results.name}">
+			</div>
+				<div class="main__coin__name">${results[0].name}</div>
+					<div class="main__coin__ticker">(${results[0].symbol.toUpperCase()})</div>
+					<div class="main__price">$${INFormat.format(
+						results[0].current_price.toFixed(2)
+					)}</div>
+						
+
+					<div class="${
+						+results[0].price_change_percentage_24h.toFixed(6) > 0
+							? (classList = 'positive')
+							: +results[0].price_change_percentage_24h.toFixed(6) < 0
+							? (classList = 'negative')
+							: +results[0].price_change_percentage_24h.toFixed(4) == 0
+							? (classList = 'price__24h_text')
+							: (classList = 'price__24h_text')
+					}">${INFormat.format(
+		+results[0].price_change_percentage_24h.toFixed(8).slice(0, -7)
+	)}%</div>
+					
+		</div>
 	`;
 	document.querySelector('.main__heading').appendChild(div);
 	const symbol = results[0].symbol;

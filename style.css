@@ -98,9 +98,16 @@ body {
 }
 
 .positive {
-	color: greenyellow;
-	width: 10rem;
+	display: flex;
+	color: rgb(10, 80, 2);
+	background-color: rgb(219, 218, 213);
+	width: 4rem;
 	margin-left: 1rem;
+	padding: 0.1rem o.3rem;
+	font-size: 1.4rem;
+	justify-content: center;
+	align-self: center;
+	border-radius: 0.2rem;
 }
 
 .negative {
@@ -175,7 +182,7 @@ body {
 	font-size: 2rem;
 	font-weight: 700;
 	justify-content: space-between;
-	padding: 1rem;
+	padding: 0.8rem 1rem;
 	align-items: center;
 	background: linear-gradient(
 		74.3deg,
@@ -210,6 +217,7 @@ body {
 
 .main__price {
 	display: flex;
+	font-size: 2.3rem;
 }
 
 /*! KEY FRAMES */
