@@ -1,6 +1,5 @@
 const API_URL = 'https://api.coingecko.com/api/v3/';
 const coinTarget = document.querySelector('.coin__container');
-const coinListEL = document.querySelector('.coin__container');
 let x = 0;
 
 //! FETCH COIN INFO
@@ -31,7 +30,6 @@ async function fetch100Coins(endpoint) {
 	);
 
 	const results = await response.json();
-	fetchHeaderInfo(results[0].id);
 
 	const INFormat = new Intl.NumberFormat('en-US');
 
@@ -52,20 +50,20 @@ async function fetch100Coins(endpoint) {
 
 		if (div.classList.contains(`${endpoint}`)) div.classList.add('active');
 	});
-	openingActiveCoin();
+	if (x === 0) openingActiveCoin();
+	x++;
 }
 
 //! OPENING ACTIVE COIN
 function openingActiveCoin() {
 	const findActiveCoin = Array.from(document.querySelectorAll('.card'));
+	fetchHeaderInfo('bitcoin');
 
-	if (x > 0) return;
 	findActiveCoin.forEach((el) => {
 		if (el.classList.contains('bitcoin')) {
 			if (x === 0) el.classList.add('active');
 		}
 	});
-	x++;
 }
 
 fetch100Coins();
