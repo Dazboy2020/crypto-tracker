@@ -32,6 +32,7 @@ async function fetch100Coins(endpoint) {
 	fetchHeaderInfo(results[0].id);
 
 	const INFormat = new Intl.NumberFormat('en-US');
+	document.querySelector('.coin__container').innerHTML = ``;
 
 	results.forEach((item) => {
 		const div = document.createElement('div');
