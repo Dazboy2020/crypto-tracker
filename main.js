@@ -32,19 +32,31 @@ async function fetch100Coins(endpoint) {
 	fetchHeaderInfo(results[0].id);
 
 	const INFormat = new Intl.NumberFormat('en-US');
+
 	document.querySelector('.coin__container').innerHTML = ``;
 
 	results.forEach((item) => {
 		const div = document.createElement('div');
 		div.classList.add('card');
+		div.classList.add(`${item.id}`);
 		div.innerHTML = `
         <img class="logo" src="${item.image}" alt="${item.name}" />
-        <div class="coin__name">${item.id}</div>
+        <div class="coin__name ${item.id}">${item.id}</div>
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
 				)}</div>    
         `;
 		document.querySelector('.coin__container').appendChild(div);
+	});
+
+	let x = 0;
+	if (x > 0) return;
+	const openingCoinStyle = Array.from(document.querySelectorAll('.card'));
+	openingCoinStyle.forEach((el) => {
+		if (el.classList.contains('bitcoin')) {
+			if (x === 0) el.classList.add('active');
+		}
+		x++;
 	});
 }
 
@@ -52,7 +64,6 @@ fetch100Coins();
 
 //! UPDATE HEADER
 function updateHeaderInfo(results) {
-	console.log(results);
 	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
 	const INFormat = new Intl.NumberFormat('en-US');
@@ -71,9 +82,6 @@ function updateHeaderInfo(results) {
 	`;
 	document.querySelector('.main__heading').appendChild(div);
 	const symbol = results[0].symbol;
-
-	//! New
-
 	loadChart(symbol);
 }
 
