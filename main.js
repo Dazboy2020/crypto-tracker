@@ -71,27 +71,17 @@ function updateHeaderInfo(results) {
 	document.querySelector('.main__heading').appendChild(div);
 	const symbol = results[0].symbol;
 
+	//! New
+
 	loadChart(symbol);
-	// const name = results[0].name.toLowerCase();
 }
-
-//! GET EXCHANGE DETAILS
-async function getExchangeInfo(id) {
-	const response = await fetch(`https://api.coingecko.com/api/v3/coins/${id}`);
-	const data = await response.json();
-	const exchange = data.tickers[1].market.identifier;
-	console.log(data);
-	console.log(exchange);
-}
-
-// getExchangeInfo('monero');
 
 //! LOAD TRADING VIEW
-function loadChart(symbol) {
+function loadChart(ticker) {
 	document.querySelector('.tradingview-widget-container').innerHTML = ``;
 	new TradingView.widget({
 		autosize: true,
-		symbol: `BITFINEX:${symbol}USD`,
+		symbol: `${ticker}USD`,
 		interval: 'D',
 		timezone: 'Europe/London',
 		theme: 'dark',
