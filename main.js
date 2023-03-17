@@ -29,6 +29,7 @@ async function fetch100Coins(endpoint) {
 	);
 
 	const results = await response.json();
+	console.log(results);
 
 	const INFormat = new Intl.NumberFormat('en-US');
 
@@ -46,16 +47,16 @@ async function fetch100Coins(endpoint) {
 				)}</div>    
 
 				<div class="${
-					+results[0].price_change_percentage_24h.toFixed(6) > 0
+					+item.price_change_percentage_24h.toFixed(6) > 0
 						? (classList = 'positive')
-						: +results[0].price_change_percentage_24h.toFixed(6) < 0
+						: +item.price_change_percentage_24h.toFixed(6) < 0
 						? (classList = 'negative')
-						: +results[0].price_change_percentage_24h.toFixed(4) == 0
+						: +item.price_change_percentage_24h.toFixed(4) == 0
 						? (classList = 'price__24h_text')
 						: (classList = 'price__24h_text')
 				}">
 				${INFormat.format(
-					+results[0].price_change_percentage_24h.toFixed(8).slice(0, -7)
+					+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
 				)}%</div>					
 				</div
         `;
