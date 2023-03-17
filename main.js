@@ -68,7 +68,7 @@ async function fetch100Coins(endpoint) {
 	x++;
 }
 
-//! OPENING ACTIVE COIN
+//! BITCOIN AS OPENING ACTIVE COIN
 function openingActiveCoin() {
 	const findActiveCoin = Array.from(document.querySelectorAll('.card'));
 	fetchHeaderInfo('bitcoin');
@@ -188,32 +188,3 @@ function FnClick(e) {
 		fetch100Coins(coin);
 	}
 }
-
-//! Notes!
-// <div class="rank">${item.market_cap_rank}</div>
-
-// <div class="${
-//     +item.price_change_24h.toFixed(6) > 0
-//         ? (classList = 'positive')
-//         : +item.price_change_24h.toFixed(6) < 0
-//         ? (classList = 'negative')
-//         : +item.price_change_24h.toFixed(4) == 0
-//         ? (classList = 'price__24h_text')
-//         : (classList = 'price__24h_text')
-// }">$${INFormat.format(
-// +item.price_change_24h.toFixed(8).slice(0, -4)
-// )}</div>
-
-// <div class="${
-// 					+item.price_change_percentage_24h.toFixed(6) > 0
-// 						? (classList = 'positive')
-// 						: +item.price_change_percentage_24h < 0
-// 						? (classList = 'negative')
-// 						: +item.price_change_percentage_24h.toFixed(4) == 0
-// 						? (classList = 'price__24h_text')
-// 						: (classList = 'price__24h_text')
-// 				}">${INFormat.format(
-// 			+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
-// 		)}%</div>
-
-/* <div class="symbol">${item.symbol.toUpperCase()}</div> */
