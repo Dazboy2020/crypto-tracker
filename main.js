@@ -101,11 +101,7 @@ function updateHeaderInfo(results) {
 					<div class="price__block">
 					<div class="main__price">$${INFormat.format(
 						results[0].current_price.toFixed(2)
-					)}</div>
-						
-
-					
-					
+					)}</div>						
 		</div>
 	`;
 	document.querySelector('.main__heading').appendChild(div);
