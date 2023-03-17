@@ -101,16 +101,27 @@ function updateHeaderInfo(results) {
 					<div class="price__block">
 					<div class="main__price">$${INFormat.format(
 						results[0].current_price.toFixed(2)
-					)}</div>
-						
-
-					
-					
+					)}</div>						
 		</div>
 	`;
 	document.querySelector('.main__heading').appendChild(div);
 	const symbol = results[0].symbol;
 	loadChart(symbol);
+}
+
+//! INFOBAR DETAILS
+function infobarDetails() {
+	const div = document.createElement('div');
+	div.innerHTML = `
+	<div class="infobar__details">
+					<div class="market__cap__details">1,000,000</div>
+                    <div class="volume24h__details">1,000,000</div>
+                    <div class="max__supply__details">1,000,000</div>
+                    <div class="circulating__supply__details">1,000,000</div>
+					</div>
+	`;
+
+	document.querySelector('.infobar').appendChild(div);
 }
 
 //! LOAD TRADING VIEW

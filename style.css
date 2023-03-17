@@ -188,6 +188,19 @@ body {
 	flex-direction: column;
 }
 
+.market__cap__details,
+.volume24h__details,
+.max__supply__details,
+.circulating__supply__details {
+	display: flex;
+	flex-direction: column;
+}
+
+.infobar__details {
+	display: flex;
+	justify-content: space-evenly;
+}
+
 .main__heading {
 	width: 100%;
 	display: flex;
