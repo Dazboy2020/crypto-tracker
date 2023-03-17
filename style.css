@@ -107,7 +107,7 @@ body {
 /*!POSTIVE & NEGATIVE */
 .positive {
 	display: flex;
-	color: rgb(3, 79, 3);
+	color: rgb(70, 114, 3);
 	width: 5rem;
 	margin-left: 1rem;
 	padding: 0.1rem 0.05rem;
@@ -129,12 +129,14 @@ body {
 }
 
 .positive_info {
-	font-size: 1.2;
-	color: greenyellow;
+	font-size: 1.2rem;
+	color: #00897b;
+	font-weight: 700;
 }
 
 .negative_info {
-	font-size: 1.2;
+	font-size: 1.2rem;
+	font-weight: 700;
 	color: red;
 }
 
