@@ -107,35 +107,43 @@ function updateHeaderInfo(results) {
 	document.querySelector('.main__heading').appendChild(div);
 	const symbol = results[0].symbol;
 	loadChart(symbol);
+	infobarDetails(results);
 }
 
 //! INFOBAR DETAILS
-function infobarDetails() {
+function infobarDetails(coin) {
+	const INFormat = new Intl.NumberFormat('en-US');
+
+	const info = document.querySelector('.infobar__dynamic');
+	info.innerHTML = ``;
+
 	const div = document.createElement('div');
-	let html = `
+	div.classList.add('infobar__dynamic');
+	div.innerHTML = `
 	 <div class="infobar__details">
 	 	<div class=column>
-		 <div class="market__cap__details">1,000,000</div>
+		 <div class="market__cap__details">${INFormat.format(coin[0].market_cap)}</div>
 	 	</div>
 	 	<div class=column>
-		 <div class="volume24h__details">1,000,000</div>
+		 <div class="volume24h__details">${INFormat.format(
+				coin[0].price_change_24h.toFixed(2)
+			)}</div>
 		</div>
 	 	<div class=column>
-		 <div class="max__supply__details">1,000,000</div>
+		 <div class="max__supply__details">${INFormat.format(
+				coin[0].total_supply.toFixed(0)
+			)}</div>
 		</div>
 	 	<div class=column>
-		 <div class="circulating__supply__details">1,000,000</div>
+		 <div class="circulating__supply__details">${INFormat.format(
+				coin[0].circulating_supply.toFixed(0)
+			)}</div>
 		</div>
 		
 	</div>
 	`;
-
-	const info = document.querySelector('.infobar');
-	info.insertAdjacentHTML('afterend', html);
-
-	// document.querySelector('.infobar').appendChild(div);
+	document.querySelector('.infobar__dynamic').appendChild(div);
 }
-infobarDetails();
 
 //! LOAD TRADING VIEW
 function loadChart(ticker) {
