@@ -174,7 +174,9 @@ body {
 	font-weight: 700;
 	display: flex;
 	width: 100%;
-	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	flex: 25%;
 	justify-content: space-evenly;
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
@@ -184,21 +186,33 @@ body {
 .volume24h,
 .max__supply,
 .circulating__supply {
+	width: 100%;
 	display: flex;
-	flex-direction: column;
+	flex: 25%;
+	justify-content: center;
+	align-content: center;
+}
+
+.column {
+	width: 100%;
+	display: flex;
+	flex: 25%;
+	justify-content: center;
+	align-content: center;
 }
 
 .market__cap__details,
 .volume24h__details,
 .max__supply__details,
 .circulating__supply__details {
-	display: flex;
-	flex-direction: column;
+	/* display: flex; */
 }
 
 .infobar__details {
+	width: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	flex: 25%;
+	margin-bottom: 3rem;
 }
 
 .main__heading {
@@ -209,6 +223,7 @@ body {
 	justify-content: flex-start;
 	padding: 0.8rem 1rem;
 	align-items: center;
+	margin-bottom: 2rem;
 	background: linear-gradient(
 		74.3deg,
 		rgb(68, 17, 28) 17.4%,
