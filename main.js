@@ -121,20 +121,20 @@ function infobarDetails(coin) {
 	div.classList.add('infobar__dynamic');
 	div.innerHTML = `
 	 <div class="infobar__details">
-	 	<div class=column>
+	 	<div class="column">
 		 <div class="market__cap__details">$${INFormat.format(coin[0].market_cap)}</div>
 	 	</div>
-	 	<div class=column>
+	 	<div class="column">
 		 <div class="volume24h__details">$${INFormat.format(
 				coin[0].price_change_24h.toFixed(2)
 			)}</div>
 		</div>
-	 	<div class=column>
+	 	<div class="column">
 		 <div class="max__supply__details">${INFormat.format(
 				coin[0].total_supply.toFixed(0)
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
-	 	<div class=column>
+	 	<div class="column">
 		 <div class="circulating__supply__details">${INFormat.format(
 				coin[0].circulating_supply.toFixed(0)
 			)} ${coin[0].symbol.toUpperCase()}</div>
