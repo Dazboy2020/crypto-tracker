@@ -104,7 +104,7 @@ body {
 	padding: 2px 5px;
 	font-weight: 700;
 }
-
+/*!POSTIVE & NEGATIVE */
 .positive {
 	display: flex;
 	color: rgb(3, 79, 3);
@@ -126,6 +126,16 @@ body {
 	font-size: 1rem;
 	align-self: center;
 	justify-content: center;
+}
+
+.positive_info {
+	font-size: 1.2;
+	color: greenyellow;
+}
+
+.negative_info {
+	font-size: 1.2;
+	color: red;
 }
 
 /*! LEFT SIDE MAIN WINDOW */
