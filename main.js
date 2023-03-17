@@ -54,7 +54,7 @@ async function fetch100Coins(endpoint) {
 						: +item.price_change_percentage_24h.toFixed(4) == 0
 						? (classList = 'price__24h_text')
 						: (classList = 'price__24h_text')
-				}">
+				} price_change_percentage_24h">
 				${INFormat.format(
 					+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
 				)}%</div>					
