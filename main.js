@@ -109,6 +109,34 @@ function updateHeaderInfo(results) {
 	loadChart(symbol);
 }
 
+//! INFOBAR DETAILS
+function infobarDetails() {
+	const div = document.createElement('div');
+	let html = `
+	 <div class="infobar__details">
+	 	<div class=column>
+		 <div class="market__cap__details">1,000,000</div>
+	 	</div>
+	 	<div class=column>
+		 <div class="volume24h__details">1,000,000</div>
+		</div>
+	 	<div class=column>
+		 <div class="max__supply__details">1,000,000</div>
+		</div>
+	 	<div class=column>
+		 <div class="circulating__supply__details">1,000,000</div>
+		</div>
+		
+	</div>
+	`;
+
+	const info = document.querySelector('.infobar');
+	info.insertAdjacentHTML('afterend', html);
+
+	// document.querySelector('.infobar').appendChild(div);
+}
+infobarDetails();
+
 //! LOAD TRADING VIEW
 function loadChart(ticker) {
 	document.querySelector('.tradingview-widget-container').innerHTML = ``;
