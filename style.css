@@ -475,6 +475,7 @@ body {
 		display: flex;
 		flex-direction: column;
 		width: 65%;
+		background-color: #00897b;
 	}
 
 	.right__side {
@@ -492,7 +493,7 @@ body {
 	}
 
 	.price {
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 
 	.coin__container {
@@ -500,8 +501,21 @@ body {
 		display: flex;
 		flex-direction: column;
 	}
+
+	.card {
+		max-height: 2.75rem;
+	}
+
+	card:hover {
+		max-height: 2.5rem;
+	}
+
+	.card img {
+		height: 50px;
+		width: auto;
+	}
 	.coin__name {
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 	.coin__header {
 		font-size: 0.7rem;

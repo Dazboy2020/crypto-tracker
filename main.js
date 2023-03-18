@@ -100,7 +100,7 @@ function updateHeaderInfo(results) {
 
 					<div class="price__block">
 					<div class="main__price">$${INFormat.format(
-						results[0].current_price.toFixed(2).toString()
+						results[0].current_price.toFixed(2)
 					)}</div>						
 		</div>
 	`;
@@ -108,6 +108,7 @@ function updateHeaderInfo(results) {
 	const symbol = results[0].symbol;
 	loadChart(symbol);
 	infobarDetails(results);
+	console.log(typeof results[0].current_price);
 }
 
 //! INFOBAR DETAILS
