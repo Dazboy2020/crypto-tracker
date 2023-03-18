@@ -100,7 +100,7 @@ function updateHeaderInfo(results) {
 
 					<div class="price__block">
 					<div class="main__price">$${INFormat.format(
-						results[0].current_price.toFixed(2)
+						results[0].current_price.toFixed(2).toString()
 					)}</div>						
 		</div>
 	`;
@@ -126,7 +126,9 @@ function infobarDetails(coin) {
 				coin[0].market_cap_change_percentage_24h.toFixed(2) > 0
 					? (classList = 'positive_info')
 					: 'negative_info'
-			} ">$${INFormat.format(coin[0].market_cap)}</div>
+			} ">$${INFormat.format(coin[0].market_cap)
+		.toString()
+		.padEnd(2, '0')}</div>
 	 	</div>
 	 	<div class="column">
 		 <div class="${
@@ -139,12 +141,12 @@ function infobarDetails(coin) {
 		</div>
 	 	<div class="column">
 		 <div class="max__supply__details">${INFormat.format(
-				coin[0].total_supply.toFixed(0)
+				+coin[0].total_supply.toFixed(0)
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
 	 	<div class="column">
 		 <div class="circulating__supply__details">${INFormat.format(
-				coin[0].circulating_supply.toFixed(0)
+				+coin[0].circulating_supply.toFixed(0)
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
 		
