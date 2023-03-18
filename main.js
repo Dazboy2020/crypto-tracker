@@ -124,10 +124,10 @@ function infobarDetails(coin) {
 	 <div class="infobar__details">
 	 	<div class="column">
 		 <div class="${
-				coin[0].market_cap_change_percentage_24h.toFixed(2) > 0
+				coin[0].market_cap.toFixed(2) > 0
 					? (classList = 'positive_info')
 					: 'negative_info'
-			} ">$${INFormat.format(coin[0].market_cap)
+			} market_cap__details">$${INFormat.format(coin[0].market_cap)
 		.toString()
 		.padEnd(2, '0')}</div>
 	 	</div>
@@ -136,17 +136,17 @@ function infobarDetails(coin) {
 				+coin[0].price_change_24h.toFixed(2) > 0
 					? (classList = 'positive_info')
 					: 'negative_info'
-			} volume24h__details">$${INFormat.format(
+			} price_change_24h">$${INFormat.format(
 		coin[0].price_change_24h.toFixed(2)
 	)}</div>
 		</div>
-	 	<div class="column">
-		 <div class="max__supply__details">${INFormat.format(
+	 	<div class="column col3">
+		 <div class="max__supply__details ms">${INFormat.format(
 				+coin[0].total_supply.toFixed(0)
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
-	 	<div class="column">
-		 <div class="circulating__supply__details">${INFormat.format(
+	 	<div class="column col4">
+		 <div class="circulating__supply__details cs">${INFormat.format(
 				+coin[0].circulating_supply.toFixed(0)
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
