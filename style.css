@@ -402,10 +402,6 @@ body {
 }
 /*! MEDIUM */
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1400px) {
-	.ticker__hidden {
-		display: none;
-	}
-
 	.left__side {
 		display: flex;
 		flex-direction: column;
@@ -483,15 +479,10 @@ body {
 
 /*! Portrait */
 @media only screen and (max-device-width: 575px) {
-	.ticker__hidden {
-		display: none;
-	}
-
 	.left__side {
 		display: flex;
 		flex-direction: column;
 		width: 62%;
-		background-color: blueviolet;
 	}
 
 	.right__side {
@@ -617,7 +608,6 @@ body {
 	.left__side {
 		flex-direction: column;
 		width: 62%;
-		background-color: black;
 	}
 
 	.right__side {
@@ -760,10 +750,6 @@ body {
 		display: none;
 	}
 
-	.ticker__hidden {
-		display: none;
-	}
-
 	.price {
 		display: none;
 	}
@@ -775,7 +761,9 @@ body {
 	.coin__header {
 		display: none;
 	}
-	.ticker__hidden {
-		display: none;
+
+	.tv__chart {
+		max-width: 100%;
+		object-fit: contain;
 	}
 }
