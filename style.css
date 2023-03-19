@@ -17,6 +17,10 @@ body {
 	height: 100%;
 }
 
+.ticker__hidden {
+	display: none;
+}
+
 /*! COIN CONTAINER */
 .coin__container {
 	display: flex;
@@ -318,6 +322,10 @@ body {
 
 /*! Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.ticker__hidden {
+		display: none;
+	}
+
 	.left__side {
 		display: flex;
 		flex-direction: column;
@@ -394,6 +402,10 @@ body {
 }
 /*! MEDIUM */
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1400px) {
+	.ticker__hidden {
+		display: none;
+	}
+
 	.left__side {
 		display: flex;
 		flex-direction: column;
@@ -471,6 +483,10 @@ body {
 
 /*! Portrait */
 @media only screen and (max-device-width: 575px) {
+	.ticker__hidden {
+		display: none;
+	}
+
 	.left__side {
 		display: flex;
 		flex-direction: column;
@@ -727,5 +743,16 @@ body {
 	.price_change_24h,
 	.market_cap__details {
 		font-size: 0.9rem;
+	}
+}
+
+/*!PHONE */
+@media only screen and (max-device-width: 575px) {
+	.coin__name {
+		display: none;
+	}
+
+	.ticker__hidden {
+		display: block;
 	}
 }
