@@ -17,10 +17,9 @@ body {
 	height: 100%;
 }
 
-.ticker__hidden {
+.fa-bars {
 	display: none;
 }
-
 /*! COIN CONTAINER */
 .coin__container {
 	display: flex;
@@ -286,6 +285,10 @@ body {
 .main__price {
 	font-size: 2.1rem;
 }
+.fa-bars {
+	color: red;
+	padding: 1rem;
+}
 
 /*! KEY FRAMES */
 @keyframes move-to-right {
@@ -322,7 +325,7 @@ body {
 
 /*! Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-	.ticker__hidden {
+	.fa-bars {
 		display: none;
 	}
 
@@ -402,6 +405,10 @@ body {
 }
 /*! MEDIUM */
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1400px) {
+	.fa-bars {
+		display: none;
+	}
+
 	.left__side {
 		display: flex;
 		flex-direction: column;
@@ -479,6 +486,10 @@ body {
 
 /*! Portrait */
 @media only screen and (max-device-width: 575px) {
+	.fa-bars {
+		display: none;
+	}
+
 	.left__side {
 		display: flex;
 		flex-direction: column;
@@ -605,6 +616,10 @@ body {
 /*! SMALL */
 
 @media only screen and (max-device-width: 767px) {
+	.fa-bars {
+		display: none;
+	}
+
 	.left__side {
 		flex-direction: column;
 		width: 62%;
@@ -758,12 +773,26 @@ body {
 		margin-left: 0;
 	}
 
-	.coin__header {
+	.h2__title {
 		display: none;
 	}
 
 	.tv__chart {
 		max-width: 100%;
 		object-fit: contain;
+	}
+
+	.coin__header {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	.fa-bars {
+		display: flex;
+		font-size: 3rem;
+		padding: 1rem;
+		align-items: center;
 	}
 }

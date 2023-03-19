@@ -195,3 +195,10 @@ function FnClick(e) {
 		fetch100Coins(coinTarget);
 	}
 }
+
+const hamburger = document.querySelector('.fa-bars');
+hamburger.addEventListener('click', menuFN);
+
+function menuFN(e) {
+	console.log('click');
+}
