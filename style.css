@@ -800,26 +800,28 @@ body {
 
 .closeChart {
 	opacity: 0;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 .openChart {
-	transition: all 0.3s ease-in-out;
-	width: 82%;
+	transition: all 0.2s ease-in-out;
 	opacity: 1;
 }
 
 .openCoinList {
-	width: 90%;
-	transition: all 0.3s ease-in-out;
+	width: 100%;
+	transition: all 0.2s ease-in-out;
 }
 
 .rightSide {
-	transition: all 0.3s ease-in-out;
+	transition: all 0.2s ease-in-out;
 	width: 90%;
+	/*! Below gives fade in animation */
+	margin-left: 0.5rem;
+	margin-top: 0.5rem;
 }
 
 .closeCoinList {
 	width: 18%;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }

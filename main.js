@@ -177,6 +177,11 @@ coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
 	const click = e.target;
 	console.log(click);
+	console.log(burgerMenuOpen);
+
+	//! new
+	if (burgerMenuOpen) shrinkCoinList();
+
 	if (click.classList.contains('coin__name')) {
 		Array.from(document.querySelectorAll('.card')).forEach((el) => {
 			el.classList.remove('active');
@@ -200,21 +205,21 @@ function FnClick(e) {
 const hamburger = document.querySelector('.fa-bars');
 hamburger.addEventListener('click', menuFN);
 
-let burgerMenuClicked = true;
+let burgerMenuOpen = false;
 const coinContainer = document.querySelector('.coin__container');
 const leftSide = document.querySelector('.left__side');
 const rightSide = document.querySelector('.right__side');
-const burgerBar = document.querySelector('.fa-bars');
+const burgerBarIcon = document.querySelector('.fa-bars');
 
 function menuFN(e) {
-	if (burgerMenuClicked) {
+	if (!burgerMenuOpen) {
 		expandCoinList();
 	}
-	if (!burgerMenuClicked) {
+	if (burgerMenuOpen) {
 		shrinkCoinList();
 	}
-	burgerMenuClicked = !burgerMenuClicked;
-	console.log(burgerMenuClicked);
+	burgerMenuOpen = !burgerMenuOpen;
+	console.log(burgerMenuOpen);
 }
 
 function expandCoinList() {
@@ -223,6 +228,7 @@ function expandCoinList() {
 	coinContainer.classList.add('openCoinList');
 	rightSide.classList.add('rightSide');
 	rightSide.classList.remove('closeCoinList');
+	burgerBarIcon.style.display = 'none';
 }
 
 function shrinkCoinList() {
@@ -231,4 +237,5 @@ function shrinkCoinList() {
 	coinContainer.classList.remove('openCoinList');
 	rightSide.classList.remove('rightSide');
 	rightSide.classList.add('closeCoinList');
+	burgerBarIcon.style.display = 'block';
 }
