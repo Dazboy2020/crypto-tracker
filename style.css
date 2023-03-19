@@ -18,8 +18,9 @@ body {
 }
 
 .fa-bars {
-	display: none;
+	/* display: none; */
 }
+
 /*! COIN CONTAINER */
 .coin__container {
 	display: flex;
@@ -285,9 +286,9 @@ body {
 .main__price {
 	font-size: 2.1rem;
 }
+
 .fa-bars {
-	color: red;
-	padding: 1rem;
+	display: none;
 }
 
 /*! KEY FRAMES */
@@ -784,7 +785,8 @@ body {
 
 	.coin__header {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		align-items: flex-end;
 		margin: 0;
 		padding: 0;
 	}
@@ -793,6 +795,31 @@ body {
 		display: flex;
 		font-size: 3rem;
 		padding: 1rem;
-		align-items: center;
 	}
+}
+
+.closeChart {
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.openChart {
+	transition: all 0.3s ease-in-out;
+	width: 82%;
+	opacity: 1;
+}
+
+.openCoinList {
+	width: 90%;
+	transition: all 0.3s ease-in-out;
+}
+
+.rightSide {
+	transition: all 0.3s ease-in-out;
+	width: 90%;
+}
+
+.closeCoinList {
+	width: 18%;
+	transition: all 0.3s ease-in-out;
 }
