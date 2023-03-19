@@ -182,14 +182,14 @@ function FnClick(e) {
 	if (click.classList.contains('coin__name')) {
 		Array.from(document.querySelectorAll('.card')).forEach((el) => {
 			el.classList.remove('active');
-
-			const cardEL = e.target.closest('.card');
-			cardEL.classList.add('active');
-			const coin = click.textContent;
-			console.log(coin);
-			fetchHeaderInfo(coin);
-			fetch100Coins(coin);
 		});
+
+		const cardEL = e.target.closest('.card');
+		cardEL.classList.add('active');
+		const coin = click.textContent;
+		console.log(coin);
+		fetchHeaderInfo(coin);
+		fetch100Coins(coin);
 	}
 	if (click.classList.contains('logo')) {
 		const coinTarget = click.className.replace('logo', '').trim();
