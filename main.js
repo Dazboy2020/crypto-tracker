@@ -9,7 +9,6 @@ async function fetchCoinInfo(endpoint) {
 	const data = await response.json();
 
 	const INFormat = new Intl.NumberFormat('en-US');
-	console.log(data);
 }
 
 //! FETCH HEADER INFO
@@ -29,7 +28,6 @@ async function fetch100Coins(endpoint) {
 	);
 
 	const results = await response.json();
-	console.log(results);
 
 	const INFormat = new Intl.NumberFormat('en-US');
 
@@ -85,7 +83,6 @@ fetch100Coins();
 
 //! UPDATE HEADER
 function updateHeaderInfo(results) {
-	console.log(results);
 	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
 	const INFormat = new Intl.NumberFormat('en-US');
@@ -187,14 +184,12 @@ function FnClick(e) {
 		const cardEL = e.target.closest('.card');
 		cardEL.classList.add('active');
 		const coin = click.textContent;
-		console.log(coin);
 		fetchHeaderInfo(coin);
 		fetch100Coins(coin);
 	}
 	if (click.classList.contains('logo')) {
 		const coinTarget = click.className.replace('logo', '').trim();
 		const cardEL = e.target.closest('.card');
-		console.log(cardEL);
 		cardEL.classList.add('active');
 		fetchHeaderInfo(coinTarget);
 		fetch100Coins(coinTarget);
