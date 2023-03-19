@@ -40,9 +40,9 @@ async function fetch100Coins(endpoint) {
 		div.classList.add('card');
 		div.classList.add(`${item.id}`);
 		div.innerHTML = `
-        <img class="logo" src="${item.image}" alt="${item.name}" />
+        <img class="logo ${item.id}" src="${item.image}" alt="${item.name}" />
         <div class="coin__name ${item.id}">${item.id}</div>
-		<div class="ticker__hidden ${item.symbol}">${item.symbol}</div>
+		<div class="ticker__hidden ${item.symbol.toUpperCase()}">${item.symbol}</div>
 
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
@@ -181,6 +181,7 @@ function loadChart(ticker) {
 coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
 	const click = e.target;
+	console.log(click);
 	if (click.classList.contains('coin__name')) {
 		Array.from(document.querySelectorAll('.card')).forEach((el) => {
 			el.classList.remove('active');
@@ -191,5 +192,14 @@ function FnClick(e) {
 		const coin = click.textContent;
 		fetchHeaderInfo(coin);
 		fetch100Coins(coin);
+	}
+	coinIMGArray = [];
+	if (click.classList.contains('logo')) {
+		const coinTarget = click.className.replace('logo', '');
+		console.log(coinTarget);
+		const cardEL = e.target.closest('.card');
+		cardEL.classList.add('active');
+		fetchHeaderInfo(coinTarget);
+		fetch100Coins(coinTarget);
 	}
 }

@@ -748,11 +748,38 @@ body {
 
 /*!PHONE */
 @media only screen and (max-device-width: 575px) {
+	.left__side {
+		width: 82%;
+	}
+
+	.right__side {
+		width: 18%;
+	}
+
 	.coin__name {
 		display: none;
 	}
 
 	.ticker__hidden {
-		display: block;
+		display: none;
+	}
+
+	.price {
+		display: none;
+	}
+
+	.card {
+		margin-left: 0;
+	}
+
+	.coin__header {
+		display: none;
+	}
+	.ticker__hidden {
+		display: none;
+	}
+	card img {
+		justify-content: center;
+		align-content: center;
 	}
 }
