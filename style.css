@@ -778,8 +778,4 @@ body {
 	.ticker__hidden {
 		display: none;
 	}
-	card img {
-		justify-content: center;
-		align-content: center;
-	}
 }
