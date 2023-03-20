@@ -544,6 +544,7 @@ body {
 		font-size: 0.6rem;
 		display: flex;
 		flex-direction: column;
+		width: 10%;
 	}
 
 	.card {
@@ -635,11 +636,11 @@ body {
 /*!PHONE */
 @media only screen and (max-device-width: 575px) {
 	.left__side {
-		width: 82%;
+		width: 75%;
 	}
 
 	.right__side {
-		width: 18%;
+		width: 25%;
 	}
 
 	.coin__name {
@@ -675,6 +676,10 @@ body {
 		display: flex;
 		font-size: 2.5rem;
 		padding: 1rem;
+	}
+
+	.closeCoinList {
+		width: 18%;
 	}
 }
 
