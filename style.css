@@ -17,8 +17,13 @@ body {
 	height: 100%;
 }
 
+.hidden {
+	display: none;
+}
+
 .fa-bars {
-	/* display: none; */
+	display: none;
+	color: red;
 }
 
 /*! COIN CONTAINER */
@@ -324,8 +329,88 @@ body {
 
 /*! MEDIA QUERIES */
 
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1450px) {
+	.fa-bars {
+		display: none;
+	}
+
+	.left__side {
+		display: flex;
+		flex-direction: column;
+		width: 75%;
+	}
+
+	.right__side {
+		width: 25%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.main__heading {
+		margin-bottom: 1rem;
+	}
+
+	.main__coin__name {
+		font-size: 1.4rem;
+	}
+
+	.price {
+		font-size: 1rem;
+	}
+
+	.coin__container {
+		font-size: 0.6rem;
+		display: flex;
+		flex-direction: column;
+	}
+	.coin__name {
+		font-size: 1.2rem;
+	}
+	.coin__header {
+		font-size: 0.7rem;
+	}
+	.symbol {
+		display: none;
+	}
+
+	.price_change_percentage_24h {
+		display: none;
+	}
+
+	.infobar {
+		width: 100%;
+		font-size: 1rem;
+		align-items: center;
+		align-self: center;
+		max-height: 3rem;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+	}
+
+	.infobar__details {
+		font-size: 0.9rem;
+	}
+
+	.circulating__supply {
+		display: flex;
+		justify-content: center;
+	}
+
+	.tradingview-widget-container {
+		height: 40rem;
+		width: 90%;
+	}
+
+	.infobar__dynamic {
+		flex-wrap: wrap;
+		flex-direction: column;
+		font-size: 1rem;
+	}
+}
+
 /*! Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
 	.fa-bars {
 		display: none;
 	}
@@ -360,7 +445,7 @@ body {
 		flex-direction: column;
 	}
 	.coin__name {
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 	.coin__header {
 		font-size: 0.7rem;
@@ -405,215 +490,6 @@ body {
 	}
 }
 /*! MEDIUM */
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1400px) {
-	.fa-bars {
-		display: none;
-	}
-
-	.left__side {
-		display: flex;
-		flex-direction: column;
-		width: 65%;
-	}
-
-	.right__side {
-		width: 35%;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.main__heading {
-		margin-bottom: 1rem;
-	}
-
-	.main__coin__name {
-		font-size: 1rem;
-	}
-
-	.price {
-		font-size: 1rem;
-	}
-
-	.coin__container {
-		font-size: 0.6rem;
-		display: flex;
-		flex-direction: column;
-	}
-	.coin__name {
-		font-size: 1rem;
-	}
-	.coin__header {
-		font-size: 0.7rem;
-	}
-	.symbol {
-		display: none;
-	}
-
-	.price_change_percentage_24h {
-		display: none;
-	}
-
-	.infobar {
-		width: 100%;
-		font-size: 1rem;
-		align-items: center;
-		align-self: center;
-		max-height: 3rem;
-		justify-content: center;
-		align-content: center;
-		text-align: center;
-	}
-
-	.infobar__details {
-		font-size: 0.9rem;
-	}
-
-	.circulating__supply {
-		display: flex;
-		justify-content: center;
-	}
-
-	.tradingview-widget-container {
-		height: 40rem;
-		width: 90%;
-	}
-
-	.infobar__dynamic {
-		flex-wrap: wrap;
-		flex-direction: column;
-		font-size: 1rem;
-	}
-}
-
-/*! Portrait */
-@media only screen and (max-device-width: 575px) {
-	.fa-bars {
-		display: none;
-	}
-
-	.left__side {
-		display: flex;
-		flex-direction: column;
-		width: 62%;
-	}
-
-	.right__side {
-		width: 38%;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.main__coin__info {
-		width: 12rem;
-	}
-
-	.price__block {
-		margin-left: 1.3rem;
-	}
-
-	.main__price {
-		font-size: 1.5rem;
-	}
-
-	.main__coin__ticker {
-		display: none;
-	}
-
-	.main__heading {
-		margin-bottom: 1rem;
-	}
-
-	.main__coin__name {
-		font-size: 1rem;
-	}
-
-	.price {
-		font-size: 0.9rem;
-	}
-
-	.coin__container {
-		font-size: 0.6rem;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.card {
-		max-height: 2.75rem;
-	}
-
-	card:hover {
-		max-height: 2.5rem;
-	}
-
-	.card img {
-		height: 50px;
-		width: auto;
-	}
-	.coin__name {
-		font-size: 0.9rem;
-	}
-	.coin__header {
-		font-size: 0.7rem;
-	}
-	.symbol {
-		display: none;
-	}
-
-	.price_change_percentage_24h {
-		display: none;
-	}
-
-	.infobar {
-		width: 100%;
-		font-size: 1rem;
-		align-items: center;
-		align-self: center;
-		max-height: 3rem;
-		justify-content: center;
-		align-content: center;
-		text-align: center;
-	}
-
-	.infobar__details {
-		display: flex;
-		font-size: 0.9rem;
-		display: flex;
-		justify-content: center;
-	}
-
-	.infobar__dynamic {
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		width: 100%;
-		flex-direction: column;
-	}
-
-	.ms,
-	.cs,
-	.col3,
-	.col4 {
-		display: none;
-	}
-
-	.tradingview-widget-container {
-		height: 40rem;
-		width: 90%;
-	}
-
-	.infobar__dynamic {
-		flex-direction: column;
-		font-size: 1rem;
-	}
-
-	.max__supply,
-	.circulating__supply,
-	.max__supply__details,
-	.circulating__supply__details {
-		display: none;
-	}
-}
-
 /*! SMALL */
 
 @media only screen and (max-device-width: 767px) {

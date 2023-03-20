@@ -178,7 +178,6 @@ let burgerMenuOpen = false;
 coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
 	const click = e.target;
-	console.log(click);
 
 	//! new
 	if (burgerMenuOpen) shrinkCoinList();
@@ -197,7 +196,6 @@ function FnClick(e) {
 	}
 	if (click.classList.contains('logo')) {
 		const coinTarget = click.className.replace('logo', '').trim();
-		console.log(coinTarget);
 		const cardEL = e.target.closest('.card');
 		cardEL.classList.add('active');
 		fetchHeaderInfo(coinTarget);
@@ -234,7 +232,6 @@ function expandCoinList() {
 
 	const coinNameBurger = document.querySelectorAll('.coin__name');
 	const price = document.querySelectorAll('.price');
-
 	coinNameBurger.forEach((item) => {
 		item.style.display = 'flex';
 		item.style.fontSize = '1rem';
