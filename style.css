@@ -802,11 +802,13 @@ body {
 .closeChart {
 	opacity: 0;
 	transition: all 0.2s ease-in-out;
+	display: none;
 }
 
 .openChart {
 	transition: all 0.2s ease-in-out;
 	opacity: 1;
+	display: flex;
 }
 
 .openCoinList {
@@ -818,8 +820,7 @@ body {
 	transition: all 0.2s ease-in-out;
 	width: 90%;
 	/*! Below gives fade in animation */
-	margin-left: 0.5rem;
-	margin-top: 0.5rem;
+	/* margin-top: 0.5rem; */
 }
 
 .closeCoinList {

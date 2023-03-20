@@ -179,7 +179,6 @@ coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
 	const click = e.target;
 	console.log(click);
-	console.log(burgerMenuOpen);
 
 	//! new
 	if (burgerMenuOpen) shrinkCoinList();
@@ -239,6 +238,7 @@ function expandCoinList() {
 	coinNameBurger.forEach((item) => {
 		item.style.display = 'flex';
 		item.style.fontSize = '1rem';
+		item.style.padding = '1rem';
 	});
 
 	price.forEach((item) => {
@@ -254,12 +254,9 @@ function shrinkCoinList() {
 	rightSide.classList.add('closeCoinList');
 	burgerBarIcon.style.display = 'block';
 
-	// document.querySelector('.coin__name').style.display = 'none';
-
 	const coinNameBurger = document.querySelectorAll('.coin__name');
 
 	coinNameBurger.forEach((item) => {
 		item.style.display = 'none';
-		// item.addEventListener('click', FnClick);
 	});
 }
