@@ -237,6 +237,7 @@ function expandCoinList() {
 
 	coinNameBurger.forEach((item) => {
 		item.style.display = 'block';
+		item.addEventListener('click', FnClick);
 	});
 }
 
