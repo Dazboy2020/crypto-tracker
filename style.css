@@ -61,7 +61,7 @@ body {
 	opacity: 0.9;
 	margin-left: 0.6rem;
 	border-left: 3px solid black;
-	/* width: 95%; */
+	width: 95%;
 }
 
 .card img {
@@ -549,12 +549,12 @@ body {
 		font-size: 0.6rem;
 		display: flex;
 		flex-direction: column;
-		width: 10%;
+		width: 100%;
 	}
 
 	.card {
 		max-height: 2.75rem;
-		width: 100%%;
+		min-width: 100%;
 	}
 
 	card:hover {
@@ -616,6 +616,7 @@ body {
 	.market__cap {
 		color: whitesmoke;
 	}
+
 	.tradingview-widget-container {
 		height: 40rem;
 		width: 90%;
@@ -642,11 +643,11 @@ body {
 /*!PHONE */
 @media only screen and (max-device-width: 575px) {
 	.left__side {
-		width: 75%;
+		width: 85%;
 	}
 
 	.right__side {
-		width: 25%;
+		width: 15%;
 	}
 
 	.coin__name {
@@ -659,6 +660,7 @@ body {
 
 	.card {
 		margin-left: 0;
+		justify-content: center;
 	}
 
 	.h2__title {
@@ -673,15 +675,17 @@ body {
 	.coin__header {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-end;
-		margin: 0;
+		align-items: center;
+		justify-content: center;
 		padding: 0;
+		margin: 0.5rem;
 	}
 
 	.fa-bars {
 		display: flex;
 		font-size: 2.5rem;
 		padding: 1rem;
+		text-align: center;
 	}
 
 	.closeCoinList {
