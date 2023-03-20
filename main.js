@@ -211,7 +211,7 @@ const leftSide = document.querySelector('.left__side');
 const rightSide = document.querySelector('.right__side');
 const burgerBarIcon = document.querySelector('.fa-bars');
 burgerBarIcon.addEventListener('click', menuFN);
-const card = document.querySelector('.card');
+const card = document.querySelectorAll('.card');
 
 function menuFN(e) {
 	if (!burgerMenuOpen) {
@@ -234,10 +234,15 @@ function expandCoinList() {
 	coinContainer.classList.add('.coin__name');
 
 	const coinNameBurger = document.querySelectorAll('.coin__name');
+	const price = document.querySelectorAll('.price');
 
 	coinNameBurger.forEach((item) => {
-		item.style.display = 'block';
-		item.addEventListener('click', FnClick);
+		item.style.display = 'flex';
+		item.style.fontSize = '1rem';
+	});
+
+	price.forEach((item) => {
+		item.style.display = 'flex';
 	});
 }
 
@@ -248,5 +253,13 @@ function shrinkCoinList() {
 	rightSide.classList.remove('rightSide');
 	rightSide.classList.add('closeCoinList');
 	burgerBarIcon.style.display = 'block';
-	document.querySelector('.coin__name').style.display = 'none';
+
+	// document.querySelector('.coin__name').style.display = 'none';
+
+	const coinNameBurger = document.querySelectorAll('.coin__name');
+
+	coinNameBurger.forEach((item) => {
+		item.style.display = 'none';
+		// item.addEventListener('click', FnClick);
+	});
 }
