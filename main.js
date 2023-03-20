@@ -253,7 +253,7 @@ function shrinkCoinList() {
 	coinContainer.classList.remove('openCoinList');
 	rightSide.classList.remove('rightSide');
 	rightSide.classList.add('closeCoinList');
-	burgerBarIcon.style.display = 'block';
+	burgerBarIcon.style.display = 'flex';
 
 	const coinNameBurger = document.querySelectorAll('.coin__name');
 
