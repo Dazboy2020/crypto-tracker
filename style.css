@@ -61,7 +61,7 @@ body {
 	opacity: 0.9;
 	margin-left: 0.6rem;
 	border-left: 3px solid black;
-	width: 95%;
+	/* width: 95%; */
 }
 
 .card img {
