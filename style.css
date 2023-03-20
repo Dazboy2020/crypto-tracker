@@ -697,7 +697,7 @@ body {
 }
 
 .openCoinList {
-	width: 100%;
+	/* width: 100%; */
 	transition: all 0.2s ease-in-out;
 }
 
@@ -709,7 +709,7 @@ body {
 }
 
 .closeCoinList {
-	width: 35%;
+	/* width: 35%; */
 	transition: all 0.2s ease-in-out;
 }
 

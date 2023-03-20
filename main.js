@@ -228,9 +228,9 @@ function menuFN(e) {
 function expandCoinList() {
 	leftSide.classList.add('closeChart');
 	leftSide.classList.remove('openChart');
-	coinContainer.classList.add('openCoinList');
+	// coinContainer.classList.add('openCoinList');
 	rightSide.classList.add('rightSide');
-	rightSide.classList.remove('closeCoinList');
+	// rightSide.classList.remove('closeCoinList');
 	burgerBarIcon.style.display = 'none';
 	coinContainer.classList.add('.coin__name');
 
@@ -250,9 +250,9 @@ function expandCoinList() {
 function shrinkCoinList() {
 	leftSide.classList.add('openChart');
 	leftSide.classList.remove('closeChart');
-	coinContainer.classList.remove('openCoinList');
+	// coinContainer.classList.remove('openCoinList');
 	rightSide.classList.remove('rightSide');
-	rightSide.classList.add('closeCoinList');
+	// rightSide.classList.add('closeCoinList');
 	burgerBarIcon.style.display = 'flex';
 
 	const coinNameBurger = document.querySelectorAll('.coin__name');
