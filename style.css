@@ -42,7 +42,7 @@ body {
 .coin__list {
 	background-color: black;
 	display: flex;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	color: var(--color-primary);
 	align-items: center;
 	padding-top: 0.5rem;
@@ -57,7 +57,7 @@ body {
 	padding: 0.5rem;
 	align-items: center;
 	border-bottom: 1px solid rgb(43, 43, 43);
-	font-size: 1rem;
+	font-size: 0.9rem;
 	opacity: 0.9;
 	margin-left: 0.6rem;
 	border-left: 3px solid black;
@@ -82,7 +82,7 @@ body {
 /*! COIN NAME IN LIST */
 .coin__name {
 	width: 10rem;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	font-weight: 700;
 	margin-left: 1rem;
 	letter-spacing: 0.5;
@@ -364,7 +364,7 @@ body {
 		flex-direction: column;
 	}
 	.coin__name {
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 	}
 	.coin__header {
 		font-size: 0.7rem;
@@ -445,7 +445,7 @@ body {
 		flex-direction: column;
 	}
 	.coin__name {
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 	}
 	.coin__header {
 		font-size: 0.7rem;
@@ -487,6 +487,10 @@ body {
 		flex-wrap: wrap;
 		flex-direction: column;
 		font-size: 1rem;
+	}
+
+	.card {
+		max-height: 3.5rem;
 	}
 }
 /*! MEDIUM */

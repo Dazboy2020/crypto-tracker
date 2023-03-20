@@ -39,7 +39,7 @@ async function fetch100Coins(endpoint) {
 		div.classList.add(`${item.id}`);
 		div.innerHTML = `
         <img class="logo ${item.id}" src="${item.image}" alt="${item.name}" />
-        <div class="coin__name ${item.id}">${item.id}</div>
+        <div class="coin__name ${item.id}">${item.id.toUpperCase()}</div>
 
         <div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
