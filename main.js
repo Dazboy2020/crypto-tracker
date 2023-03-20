@@ -228,8 +228,11 @@ function menuFN(e) {
 function expandCoinList() {
 	leftSide.classList.add('closeChart');
 	leftSide.classList.remove('openChart');
-	// coinContainer.classList.add('openCoinList');
+
+	coinContainer.classList.add('openCoinList');
+
 	rightSide.classList.add('rightSide');
+
 	// rightSide.classList.remove('closeCoinList');
 	burgerBarIcon.style.display = 'none';
 	coinContainer.classList.add('.coin__name');

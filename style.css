@@ -23,7 +23,7 @@ body {
 
 .fa-bars {
 	display: none;
-	color: red;
+	color: black;
 }
 
 /*! COIN CONTAINER */
@@ -332,6 +332,7 @@ body {
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1450px) {
 	.fa-bars {
 		display: none;
+		color: black;
 	}
 
 	.left__side {
@@ -417,6 +418,7 @@ body {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
 	.fa-bars {
 		display: none;
+		color: black;
 	}
 
 	.left__side {
@@ -504,6 +506,7 @@ body {
 @media only screen and (max-device-width: 767px) {
 	.fa-bars {
 		display: none;
+		color: red;
 	}
 
 	.left__side {
@@ -550,11 +553,12 @@ body {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		margin-left: 0;
 	}
 
 	.card {
 		max-height: 2.75rem;
-		min-width: 100%;
+		/* min-width: 100%; */
 	}
 
 	card:hover {
@@ -642,6 +646,9 @@ body {
 
 /*!PHONE */
 @media only screen and (max-device-width: 575px) {
+	.fa-bars {
+		color: red;
+	}
 	.left__side {
 		width: 85%;
 	}
@@ -718,7 +725,7 @@ body {
 }
 
 .closeCoinList {
-	/* width: 35%; */
+	width: 15%;
 	transition: all 0.2s ease-in-out;
 }
 
