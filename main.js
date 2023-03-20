@@ -260,4 +260,10 @@ function shrinkCoinList() {
 	coinNameBurger.forEach((item) => {
 		item.style.display = 'none';
 	});
+
+	const price = document.querySelectorAll('.price');
+
+	price.forEach((item) => {
+		item.style.display = 'none';
+	});
 }

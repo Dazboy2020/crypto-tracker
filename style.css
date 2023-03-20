@@ -503,11 +503,11 @@ body {
 
 	.left__side {
 		flex-direction: column;
-		width: 62%;
+		width: 65%;
 	}
 
 	.right__side {
-		width: 38%;
+		width: 35%;
 		display: flex;
 		flex-direction: column;
 	}
