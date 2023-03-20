@@ -173,6 +173,8 @@ function loadChart(ticker) {
 }
 
 //! EVENT LISTENER
+let burgerMenuOpen = false;
+
 coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
 	const click = e.target;
@@ -190,11 +192,13 @@ function FnClick(e) {
 		const cardEL = e.target.closest('.card');
 		cardEL.classList.add('active');
 		const coin = click.textContent;
+		console.log(coin);
 		fetchHeaderInfo(coin);
 		fetch100Coins(coin);
 	}
 	if (click.classList.contains('logo')) {
 		const coinTarget = click.className.replace('logo', '').trim();
+		console.log(coinTarget);
 		const cardEL = e.target.closest('.card');
 		cardEL.classList.add('active');
 		fetchHeaderInfo(coinTarget);
@@ -202,14 +206,12 @@ function FnClick(e) {
 	}
 }
 
-const hamburger = document.querySelector('.fa-bars');
-hamburger.addEventListener('click', menuFN);
-
-let burgerMenuOpen = false;
 const coinContainer = document.querySelector('.coin__container');
 const leftSide = document.querySelector('.left__side');
 const rightSide = document.querySelector('.right__side');
 const burgerBarIcon = document.querySelector('.fa-bars');
+burgerBarIcon.addEventListener('click', menuFN);
+const card = document.querySelector('.card');
 
 function menuFN(e) {
 	if (!burgerMenuOpen) {
@@ -229,6 +231,13 @@ function expandCoinList() {
 	rightSide.classList.add('rightSide');
 	rightSide.classList.remove('closeCoinList');
 	burgerBarIcon.style.display = 'none';
+	coinContainer.classList.add('.coin__name');
+
+	const coinNameBurger = document.querySelectorAll('.coin__name');
+
+	coinNameBurger.forEach((item) => {
+		item.style.display = 'block';
+	});
 }
 
 function shrinkCoinList() {
@@ -238,4 +247,5 @@ function shrinkCoinList() {
 	rightSide.classList.remove('rightSide');
 	rightSide.classList.add('closeCoinList');
 	burgerBarIcon.style.display = 'block';
+	document.querySelector('.coin__name').style.display = 'none';
 }

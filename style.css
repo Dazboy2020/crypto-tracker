@@ -798,6 +798,7 @@ body {
 	}
 }
 
+/*! COIN LIST MENU MOBILE */
 .closeChart {
 	opacity: 0;
 	transition: all 0.2s ease-in-out;
@@ -824,4 +825,11 @@ body {
 .closeCoinList {
 	width: 18%;
 	transition: all 0.2s ease-in-out;
+}
+
+.coin__name__burgerMenuOpen {
+	font-size: 1rem;
+	display: block;
+	color: white;
+	opacity: 1;
 }
