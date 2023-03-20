@@ -250,9 +250,7 @@ function expandCoinList() {
 function shrinkCoinList() {
 	leftSide.classList.add('openChart');
 	leftSide.classList.remove('closeChart');
-	// coinContainer.classList.remove('openCoinList');
 	rightSide.classList.remove('rightSide');
-	// rightSide.classList.add('closeCoinList');
 	burgerBarIcon.style.display = 'flex';
 
 	const coinNameBurger = document.querySelectorAll('.coin__name');
