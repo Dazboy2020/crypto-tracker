@@ -54,10 +54,10 @@ body {
 
 .card {
 	display: flex;
-	padding: 0.5rem;
+	padding: 0.25rem;
 	align-items: center;
 	border-bottom: 1px solid rgb(43, 43, 43);
-	font-size: 0.9rem;
+	font-size: 0.8rem;
 	opacity: 0.9;
 	margin-left: 0.6rem;
 	border-left: 3px solid black;
@@ -414,8 +414,15 @@ body {
 	}
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.coin__container {
+		font-size: 1rem;
+		padding: 0.2rem;
+	}
+}
+
 /*! Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 	.fa-bars {
 		display: none;
 		color: black;
@@ -485,7 +492,7 @@ body {
 	}
 
 	.tradingview-widget-container {
-		height: 40rem;
+		height: 80vh;
 		width: 90%;
 	}
 
@@ -645,7 +652,7 @@ body {
 }
 
 /*!PHONE */
-@media only screen and (max-device-width: 575px) {
+@media only screen and (max-device-width: 576px) {
 	.fa-bars {
 		color: red;
 	}
@@ -676,7 +683,8 @@ body {
 
 	.tv__chart {
 		max-width: 100%;
-		object-fit: contain;
+		height: max-content;
+		/* object-fit: contain; */
 	}
 
 	.coin__header {
@@ -696,6 +704,10 @@ body {
 
 	.closeCoinList {
 		width: 18%;
+	}
+
+	.active {
+		border-left: 1px solid whitesmoke;
 	}
 }
 
