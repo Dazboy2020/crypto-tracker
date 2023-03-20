@@ -28,6 +28,7 @@ async function fetch100Coins(endpoint) {
 	);
 
 	const results = await response.json();
+	console.log(results);
 
 	const INFormat = new Intl.NumberFormat('en-US');
 
@@ -83,6 +84,7 @@ fetch100Coins();
 
 //! UPDATE HEADER
 function updateHeaderInfo(results) {
+	console.log(results);
 	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
 	const INFormat = new Intl.NumberFormat('en-US');
@@ -189,7 +191,9 @@ function FnClick(e) {
 
 		const cardEL = e.target.closest('.card');
 		cardEL.classList.add('active');
-		const coin = click.textContent;
+
+		const newCoin = click.textContent;
+		const coin = newCoin.toLowerCase();
 		console.log(coin);
 		fetchHeaderInfo(coin);
 		fetch100Coins(coin);
