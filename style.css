@@ -499,12 +499,21 @@ body {
 	.infobar__dynamic {
 		flex-wrap: wrap;
 		flex-direction: column;
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 
 	.card {
 		max-height: 3.5rem;
 		width: 95%;
+	}
+
+	.positive_info,
+	.negative_info {
+		font-size: 0.9rem;
+	}
+
+	.price_change_24h .market_cap__details {
+		font-size: 0.9rem;
 	}
 }
 /*! MEDIUM */
@@ -513,7 +522,7 @@ body {
 @media only screen and (max-device-width: 767px) {
 	.fa-bars {
 		display: none;
-		color: red;
+		color: black;
 	}
 
 	.left__side {
@@ -565,7 +574,7 @@ body {
 
 	.card {
 		max-height: 2.75rem;
-		/* min-width: 100%; */
+		margin-left: 0;
 	}
 
 	card:hover {
