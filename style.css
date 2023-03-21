@@ -412,6 +412,15 @@ body {
 	.card {
 		width: 95%;
 	}
+
+	.positive_info,
+	.negative_info {
+		font-size: 0.9rem;
+	}
+
+	.price_change_24h .market_cap__details {
+		font-size: 0.9rem;
+	}
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
