@@ -38,26 +38,26 @@ async function fetch100Coins(endpoint) {
 		div.classList.add('card');
 		div.classList.add(`${item.id}`);
 		div.innerHTML = `
-        <img class="logo ${item.id}" src="${item.image}" alt="${item.name}" />
-        <div class="coin__name ${item.id}">${item.id.toUpperCase()}</div>
+				<img class="logo ${item.id}" src="${item.image}" alt="${item.name}" />
+				<div class="coin__name ${item.id}">${item.id.toUpperCase()}</div>
 
-        <div class="price">$${INFormat.format(
+				<div class="price">$${INFormat.format(
 					item.current_price.toFixed(8).slice(0, -4)
 				)}</div>    
 
-				<div class="${
-					+item.price_change_percentage_24h.toFixed(6) > 0
-						? (classList = 'positive')
-						: +item.price_change_percentage_24h.toFixed(6) < 0
-						? (classList = 'negative')
-						: +item.price_change_percentage_24h.toFixed(4) == 0
-						? (classList = 'price__24h_text')
-						: (classList = 'price__24h_text')
-				} price_change_percentage_24h">
-				${INFormat.format(
-					+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
-				)}%</div>					
-				</div
+						<div class="${
+							+item.price_change_percentage_24h.toFixed(6) > 0
+								? (classList = 'positive')
+								: +item.price_change_percentage_24h.toFixed(6) < 0
+								? (classList = 'negative')
+								: +item.price_change_percentage_24h.toFixed(4) == 0
+								? (classList = 'price__24h_text')
+								: (classList = 'price__24h_text')
+						} price_change_percentage_24h">
+						${INFormat.format(
+							+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
+						)}%</div>					
+						</div
         `;
 		document.querySelector('.coin__container').appendChild(div);
 
@@ -178,33 +178,17 @@ let burgerMenuOpen = false;
 
 coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
-	const click = e.target;
-	console.log(e.target);
-
-	//! new
 	if (burgerMenuOpen) shrinkCoinList();
 
-	if (click.classList.contains('coin__name')) {
-		Array.from(document.querySelectorAll('.card')).forEach((el) => {
-			el.classList.remove('active');
-		});
+	const cardELTarget = e.target.closest('.card');
+	const coinTarget = cardELTarget.className.replace('card', '').trim();
 
-		const cardEL = e.target.closest('.card');
-		cardEL.classList.add('active');
+	Array.from(document.querySelectorAll('.card')).forEach((el) => {
+		el.classList.remove('active');
+	});
 
-		const newCoin = click.textContent;
-		const coin = newCoin.toLowerCase();
-		console.log(coin);
-		fetchHeaderInfo(coin);
-		fetch100Coins(coin);
-	}
-	if (click.classList.contains('logo')) {
-		const coinTarget = click.className.replace('logo', '').trim();
-		const cardEL = e.target.closest('.card');
-		cardEL.classList.add('active');
-		fetchHeaderInfo(coinTarget);
-		fetch100Coins(coinTarget);
-	}
+	fetchHeaderInfo(coinTarget);
+	fetch100Coins(coinTarget);
 }
 
 const coinContainer = document.querySelector('.coin__container');

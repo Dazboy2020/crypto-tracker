@@ -62,6 +62,7 @@ body {
 	margin-left: 0.6rem;
 	border-left: 3px solid black;
 	width: 95%;
+	cursor: pointer;
 }
 
 .card img {
