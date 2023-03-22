@@ -28,7 +28,6 @@ async function fetch100Coins(endpoint) {
 	);
 
 	const results = await response.json();
-	console.log(results);
 
 	const INFormat = new Intl.NumberFormat('en-US');
 
@@ -180,6 +179,7 @@ let burgerMenuOpen = false;
 coinTarget.addEventListener('click', FnClick);
 function FnClick(e) {
 	const click = e.target;
+	console.log(e.target);
 
 	//! new
 	if (burgerMenuOpen) shrinkCoinList();
@@ -233,7 +233,6 @@ function expandCoinList() {
 
 	rightSide.classList.add('rightSide');
 
-	// rightSide.classList.remove('closeCoinList');
 	burgerBarIcon.style.display = 'none';
 	coinContainer.classList.add('.coin__name');
 
