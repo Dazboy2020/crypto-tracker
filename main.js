@@ -1,5 +1,6 @@
 const API_URL = 'https://api.coingecko.com/api/v3/';
 const coinTarget = document.querySelector('.coin__container');
+const spinner = document.querySelector('.lds-dual-ring');
 let x = 0;
 
 //! FETCH COIN INFO
@@ -23,6 +24,7 @@ async function fetchHeaderInfo(coin) {
 
 //! FETCH OPENING COINS
 async function fetch100Coins(endpoint) {
+	spinner.style.display = 'inline-block';
 	const response = await fetch(
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false,'
 	);
@@ -63,6 +65,8 @@ async function fetch100Coins(endpoint) {
 
 		if (div.classList.contains(`${endpoint}`)) div.classList.add('active');
 	});
+
+	spinner.style.display = 'none';
 	if (x === 0) openingActiveCoin();
 	x++;
 }
