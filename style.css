@@ -259,8 +259,6 @@ body {
 .main__coin__info {
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
-	width: 60rem;
 }
 
 .main__coin__name {
@@ -291,6 +289,8 @@ body {
 }
 
 .main__price {
+	display: flex;
+	justify-content: flex-end;
 	font-size: 2.1rem;
 }
 

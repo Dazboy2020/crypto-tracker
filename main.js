@@ -29,7 +29,12 @@ async function fetch100Coins(endpoint) {
 
 	const results = await response.json();
 
-	const INFormat = new Intl.NumberFormat('en-US');
+	const INFormat = new Intl.NumberFormat('en-US', {
+		style: 'decimal',
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+		roundingIncrement: 1,
+	});
 
 	document.querySelector('.coin__container').innerHTML = ``;
 
@@ -86,7 +91,12 @@ function updateHeaderInfo(results) {
 	console.log(results);
 	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
-	const INFormat = new Intl.NumberFormat('en-US');
+	const INFormat = new Intl.NumberFormat('en-US', {
+		style: 'decimal',
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+		roundingIncrement: 1,
+	});
 
 	div.innerHTML = `
 		<div class="main__coin__info">
@@ -111,7 +121,12 @@ function updateHeaderInfo(results) {
 
 //! INFOBAR DETAILS
 function infobarDetails(coin) {
-	const INFormat = new Intl.NumberFormat('en-US');
+	const INFormat = new Intl.NumberFormat('en-US', {
+		style: 'decimal',
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+		roundingIncrement: 1,
+	});
 
 	const info = document.querySelector('.infobar__dynamic');
 	info.innerHTML = ``;
