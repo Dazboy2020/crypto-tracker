@@ -94,6 +94,7 @@ function updateHeaderInfo(results) {
 	console.log(results);
 	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
+	div.classList.add('main__coin__info');
 	const INFormat = new Intl.NumberFormat('en-US', {
 		style: 'decimal',
 		minimumFractionDigits: 2,
@@ -107,14 +108,10 @@ function updateHeaderInfo(results) {
 				<img src="${results[0].image}" alt="${results.name}">
 			</div>
 				<div class="main__coin__name">${results[0].name}</div>
-					<div class="main__coin__ticker">(${results[0].symbol.toUpperCase()})</div>
-
-
-					<div class="price__block">
-						<div class="main__price">$${INFormat.format(
-							results[0].current_price.toFixed(2)
-						)}</div>
-
+				<div class="main__coin__ticker">(${results[0].symbol.toUpperCase()})</div>
+				<div class="main__price">$${INFormat.format(
+					results[0].current_price.toFixed(2)
+				)}</div>						
 		</div>
 	`;
 	document.querySelector('.main__heading').appendChild(div);
