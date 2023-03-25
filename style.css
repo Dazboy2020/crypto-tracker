@@ -17,13 +17,13 @@ body {
 	height: 100%;
 }
 
-.hidden {
-	display: none;
-}
-
 .fa-bars {
 	display: none;
 	color: black;
+}
+
+.hidden {
+	display: none;
 }
 
 /*! COIN CONTAINER */
@@ -599,7 +599,7 @@ body {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		margin-left: 0;
+		margin-left: 2px;
 	}
 
 	.card {
@@ -747,6 +747,14 @@ body {
 
 	.active {
 		border-left: 1px solid whitesmoke;
+	}
+
+	.coin__container {
+		margin-left: 2px;
+	}
+
+	.main__heading {
+		padding: 0.5rem 0.75rem;
 	}
 }
 
