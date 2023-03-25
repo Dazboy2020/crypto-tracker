@@ -2,13 +2,22 @@ const API_URL = 'https://api.coingecko.com/api/v3/';
 const coinTarget = document.querySelector('.coin__container');
 let x = 0;
 
+const INFormat = new Intl.NumberFormat('en-US', {
+	style: 'decimal',
+	minimumFractionDigits: 2,
+	maximumFractionDigits: 2,
+	roundingIncrement: 1,
+});
+const INFormat0 = new Intl.NumberFormat('en-US', {
+	style: 'decimal',
+	minimumFractionDigits: 0,
+	maximumFractionDigits: 0,
+	roundingIncrement: 1,
+});
+
 //! FETCH COIN INFO
 async function fetchCoinInfo(endpoint) {
 	const response = await fetch(`${API_URL}/coins/${endpoint}`);
-
-	const data = await response.json();
-
-	const INFormat = new Intl.NumberFormat('en-US');
 }
 
 //! FETCH HEADER INFO
@@ -28,13 +37,6 @@ async function fetch100Coins(endpoint) {
 	);
 
 	const results = await response.json();
-
-	const INFormat = new Intl.NumberFormat('en-US', {
-		style: 'decimal',
-		minimumFractionDigits: 2,
-		maximumFractionDigits: 2,
-		roundingIncrement: 1,
-	});
 
 	document.querySelector('.coin__container').innerHTML = ``;
 
@@ -121,19 +123,6 @@ function updateHeaderInfo(results) {
 
 //! INFOBAR DETAILS
 function infobarDetails(coin) {
-	const INFormat = new Intl.NumberFormat('en-US', {
-		style: 'decimal',
-		minimumFractionDigits: 2,
-		maximumFractionDigits: 2,
-		roundingIncrement: 1,
-	});
-	const INFormat0 = new Intl.NumberFormat('en-US', {
-		style: 'decimal',
-		minimumFractionDigits: 0,
-		maximumFractionDigits: 0,
-		roundingIncrement: 1,
-	});
-
 	const info = document.querySelector('.infobar__dynamic');
 	info.innerHTML = ``;
 
