@@ -60,7 +60,6 @@ body {
 	font-size: 0.8rem;
 	opacity: 0.9;
 	margin-left: 0.6rem;
-	border-left: 3px solid black;
 	width: 95%;
 	cursor: pointer;
 }
@@ -534,7 +533,8 @@ body {
 
 	.card {
 		max-height: 3.5rem;
-		width: 95%;
+		width: 97.5%;
+		margin-left: 0.3rem;
 	}
 
 	.positive_info,
@@ -592,6 +592,7 @@ body {
 
 	.price {
 		font-size: 0.9rem;
+		padding-right: 2px;
 	}
 
 	.coin__container {
@@ -747,6 +748,7 @@ body {
 
 	.active {
 		border-left: 1px solid whitesmoke;
+		padding-right: 2px;
 	}
 
 	.coin__container {
