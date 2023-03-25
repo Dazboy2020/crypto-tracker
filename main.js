@@ -127,6 +127,12 @@ function infobarDetails(coin) {
 		maximumFractionDigits: 2,
 		roundingIncrement: 1,
 	});
+	const INFormat0 = new Intl.NumberFormat('en-US', {
+		style: 'decimal',
+		minimumFractionDigits: 0,
+		maximumFractionDigits: 0,
+		roundingIncrement: 1,
+	});
 
 	const info = document.querySelector('.infobar__dynamic');
 	info.innerHTML = ``;
@@ -140,7 +146,7 @@ function infobarDetails(coin) {
 				coin[0].market_cap.toFixed(2) > 0
 					? (classList = 'positive_info')
 					: 'negative_info'
-			} market_cap__details">$${INFormat.format(coin[0].market_cap)
+			} market_cap__details">$${INFormat0.format(coin[0].market_cap)
 		.toString()
 		.padEnd(2, '0')}</div>
 	 	</div>
@@ -154,13 +160,13 @@ function infobarDetails(coin) {
 	)}</div>
 		</div>
 	 	<div class="column col3">
-		 <div class="max__supply__details ms">${+coin[0].total_supply.toFixed(
-				0
+		 <div class="max__supply__details ms">${INFormat0.format(
+				+coin[0].total_supply.toFixed(0)
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
 	 	<div class="column col4">
-		 <div class="circulating__supply__details cs">${+coin[0].circulating_supply.toFixed(
-				0
+		 <div class="circulating__supply__details cs">${INFormat0.format(
+				+coin[0].circulating_supply.toFixed(0)
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
 		
