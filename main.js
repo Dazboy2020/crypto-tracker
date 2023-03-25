@@ -70,6 +70,7 @@ async function fetch100Coins(endpoint) {
 
 		if (div.classList.contains(`${endpoint}`)) div.classList.add('active');
 	});
+
 	if (x === 0) openingActiveCoin();
 	x++;
 }
@@ -110,9 +111,10 @@ function updateHeaderInfo(results) {
 
 
 					<div class="price__block">
-					<div class="main__price">$${INFormat.format(
-						results[0].current_price.toFixed(2)
-					)}</div>						
+						<div class="main__price">$${INFormat.format(
+							results[0].current_price.toFixed(2)
+						)}</div>
+
 		</div>
 	`;
 	document.querySelector('.main__heading').appendChild(div);
@@ -150,12 +152,12 @@ function infobarDetails(coin) {
 		</div>
 	 	<div class="column col3">
 		 <div class="max__supply__details ms">${INFormat0.format(
-				+coin[0].total_supply.toFixed(0)
+				+coin[0].total_supply
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
 	 	<div class="column col4">
 		 <div class="circulating__supply__details cs">${INFormat0.format(
-				+coin[0].circulating_supply.toFixed(0)
+				+coin[0].circulating_supply
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
 		
