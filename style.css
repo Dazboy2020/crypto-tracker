@@ -71,6 +71,7 @@ body {
 	justify-content: center;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
+	padding-left: 0.5rem;
 }
 
 .card:hover {
@@ -537,6 +538,10 @@ body {
 		margin-left: 0.3rem;
 	}
 
+	.card img {
+		padding-left: 0.25rem;
+	}
+
 	.positive_info,
 	.negative_info {
 		font-size: 0.9rem;
@@ -615,7 +620,9 @@ body {
 	.card img {
 		height: 50px;
 		width: auto;
+		padding-left: 0;
 	}
+
 	.coin__name {
 		font-size: 0.9rem;
 	}
