@@ -154,13 +154,13 @@ function infobarDetails(coin) {
 	)}</div>
 		</div>
 	 	<div class="column col3">
-		 <div class="max__supply__details ms">${INFormat.format(
-				+coin[0].total_supply.toFixed(0)
+		 <div class="max__supply__details ms">${+coin[0].total_supply.toFixed(
+				0
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
 	 	<div class="column col4">
-		 <div class="circulating__supply__details cs">${INFormat.format(
-				+coin[0].circulating_supply.toFixed(0)
+		 <div class="circulating__supply__details cs">${+coin[0].circulating_supply.toFixed(
+				0
 			)} ${coin[0].symbol.toUpperCase()}</div>
 		</div>
 		
