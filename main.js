@@ -45,26 +45,26 @@ async function fetch100Coins(endpoint) {
 		div.classList.add('card');
 		div.classList.add(`${item.id}`);
 		div.innerHTML = `
-				<img class="logo ${item.id}" src="${item.image}" alt="${item.name}" />
-				<div class="coin__name ${item.id}">${item.id.toUpperCase()}</div>
+			<img class="logo ${item.id}" src="${item.image}" alt="${item.name}" />
+			<div class="coin__name ${item.id}">${item.id.toUpperCase()}</div>
 
-				<div class="price">$${INFormat.format(
-					item.current_price.toFixed(8).slice(0, -4)
-				)}</div>    
+			<div class="price">$${INFormat.format(
+				item.current_price.toFixed(8).slice(0, -4)
+			)}</div>    
 
-						<div class="${
-							+item.price_change_percentage_24h.toFixed(6) > 0
-								? (classList = 'positive')
-								: +item.price_change_percentage_24h.toFixed(6) < 0
-								? (classList = 'negative')
-								: +item.price_change_percentage_24h.toFixed(4) == 0
-								? (classList = 'price__24h_text')
-								: (classList = 'price__24h_text')
-						} price_change_percentage_24h">
+				<div class="${
+					+item.price_change_percentage_24h.toFixed(6) > 0
+						? (classList = 'positive')
+						: +item.price_change_percentage_24h.toFixed(6) < 0
+						? (classList = 'negative')
+						: +item.price_change_percentage_24h.toFixed(4) == 0
+						? (classList = 'price__24h_text')
+						: (classList = 'price__24h_text')
+				} price_change_percentage_24h">
 						${INFormat.format(
 							+item.price_change_percentage_24h.toFixed(8).slice(0, -7)
 						)}%</div>					
-						</div
+			</div
         `;
 		document.querySelector('.coin__container').appendChild(div);
 
@@ -95,12 +95,6 @@ function updateHeaderInfo(results) {
 	document.querySelector('.main__heading').innerHTML = ``;
 	const div = document.createElement('div');
 	div.classList.add('main__coin__info');
-	const INFormat = new Intl.NumberFormat('en-US', {
-		style: 'decimal',
-		minimumFractionDigits: 2,
-		maximumFractionDigits: 2,
-		roundingIncrement: 1,
-	});
 
 	div.innerHTML = `
 		<div class="main__coin__info">
