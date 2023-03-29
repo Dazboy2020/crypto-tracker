@@ -18,8 +18,8 @@ body {
 }
 
 .fa-bars {
-	display: none;
-	color: black;
+	display: none !important;
+	color: rgb(247, 5, 5);
 }
 
 .hidden {
@@ -299,10 +299,6 @@ body {
 	margin-left: auto;
 }
 
-.fa-bars {
-	display: none;
-}
-
 /*! KEY FRAMES */
 @keyframes move-to-right {
 	0% {
@@ -356,8 +352,7 @@ body {
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1450px) {
 	.fa-bars {
-		display: none;
-		color: black;
+		display: none !important;
 	}
 
 	.left__side {
@@ -458,8 +453,7 @@ body {
 /*! Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 	.fa-bars {
-		display: none;
-		color: black;
+		display: none !important;
 	}
 
 	.left__side {
@@ -561,8 +555,7 @@ body {
 
 @media only screen and (max-device-width: 767px) {
 	.fa-bars {
-		display: none;
-		color: black;
+		display: none !important;
 	}
 
 	.left__side {
@@ -709,6 +702,7 @@ body {
 @media only screen and (max-device-width: 576px) {
 	.fa-bars {
 		color: red;
+		display: flex !important;
 	}
 	.left__side {
 		width: 85%;
@@ -809,4 +803,8 @@ body {
 	display: block;
 	color: white;
 	opacity: 1;
+}
+
+.hideBurgerMenu {
+	display: none !important;
 }

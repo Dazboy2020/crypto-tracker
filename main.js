@@ -191,6 +191,7 @@ function FnClick(e) {
 
 	const cardELTarget = e.target.closest('.card');
 	const coinTarget = cardELTarget.className.replace('card', '').trim();
+	console.log(coinTarget);
 
 	Array.from(document.querySelectorAll('.card')).forEach((el) => {
 		el.classList.remove('active');
@@ -225,8 +226,8 @@ function expandCoinList() {
 	coinContainer.classList.add('openCoinList');
 
 	rightSide.classList.add('rightSide');
+	burgerBarIcon.classList.add('hideBurgerMenu');
 
-	burgerBarIcon.style.display = 'none';
 	coinContainer.classList.add('.coin__name');
 
 	const coinNameBurger = document.querySelectorAll('.coin__name');
@@ -247,6 +248,7 @@ function shrinkCoinList() {
 	leftSide.classList.remove('closeChart');
 	rightSide.classList.remove('rightSide');
 	burgerBarIcon.style.display = 'flex';
+	burgerBarIcon.classList.remove('hideBurgerMenu');
 
 	const coinNameBurger = document.querySelectorAll('.coin__name');
 
